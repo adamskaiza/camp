@@ -1,0 +1,11 @@
+.socials {
+	@include flex(center, center, null, 2rem);
+
+	&--col {
+		flex-direction: column;
+		svg {
+			width: 25px;
+			height: 25px;
+		}
+	}
+}

@@ -1,0 +1,40 @@
+.careers {
+	margin: 4rem;
+	@include breakpoint(m-large) {
+		margin: 1rem;
+	}
+	&__content {
+		&.container {
+			padding: 0;
+		}
+		position: relative;
+		height: 763px;
+		@include breakpoint(m-large) {
+			height: unset;
+		}
+
+		& > img {
+			width: 100%;
+			height: 100%;
+			object-fit: cover;
+			@include breakpoint(m-large) {
+				max-height: 400px;
+			}
+			@include breakpoint(xs) {
+				max-height: 191px;
+			}
+		}
+	}
+
+	&__desc {
+		position: absolute;
+		top: 0;
+		right: 4rem;
+		background-color: #fff;
+		@include breakpoint(m-large) {
+			position: static;
+			top: unset;
+			right: unset;
+		}
+	}
+}

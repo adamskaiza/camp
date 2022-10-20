@@ -1,0 +1,18 @@
+.archive-page {
+	background-color: #d9dde3;
+	.container {
+		padding-top: 4rem;
+		padding-bottom: 4rem;
+	}
+	&__posts-grid {
+		@include grid(repeat(2, 1fr), null, null);
+		grid-row-gap: 3rem;
+		grid-column-gap: 1rem;
+		padding: 4rem;
+		background-color: #fff;
+
+		@include breakpoint(small) {
+			grid-template-columns: 1fr;
+		}
+	}
+}

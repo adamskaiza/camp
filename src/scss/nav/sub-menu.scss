@@ -1,0 +1,48 @@
+.menu-item-has-children {
+	position: relative;
+	@include breakpoint(tablet) {
+		position: static;
+		text-align: center;
+	}
+}
+
+.sub-menu {
+	position: absolute;
+	left: 0;
+	top: 100%;
+	text-align: left;
+	opacity: 0;
+	transform: translateY(-20px);
+	height: 0;
+	min-width: 100%;
+	padding: 1rem 0;
+	color: #fff;
+
+	transition: transform 0.2s ease-in-out, opacity 0.1s ease-out;
+	overflow: hidden;
+	// z-index: -1;
+	border-bottom: 2px solid #691c56;
+	@include breakpoint(tablet) {
+		position: static;
+		padding: 0;
+
+		left: unset;
+		top: unset;
+		text-align: center;
+		transform: translateY(0);
+		// border: none;
+		transition: all 0.2s;
+	}
+}
+
+.menu-item-has-children > a:focus + .sub-menu,
+.sub-menu:focus-within {
+	opacity: 1;
+	transform: translateY(0px);
+	height: auto;
+	z-index: 1;
+}
+
+// #menu-category-menu > .menu-item-has-children > a {
+// 	pointer-events: none;
+// }

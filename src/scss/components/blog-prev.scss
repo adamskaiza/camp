@@ -1,0 +1,39 @@
+.blog-prev {
+	&__grid {
+		@include grid(1fr 1fr, null, null);
+		@include breakpoint(m-large) {
+			grid-template-columns: 1fr;
+			grid-gap: 2rem;
+			&.container {
+				padding: 0 0 1rem 1rem;
+			}
+		}
+	}
+
+	&__posts-grid {
+		@include grid(auto auto, null, 1rem);
+		place-content: baseline;
+		@include breakpoint(m-large) {
+			grid-template-columns: repeat(4, 1fr);
+			grid-gap: 2rem;
+			overflow-x: auto;
+		}
+		.post-block {
+			min-width: 260px;
+		}
+	}
+	&__link-mobile {
+		display: none;
+		@include breakpoint(m-large) {
+			display: block;
+		}
+	}
+
+	.desc {
+		a {
+			@include breakpoint(m-large) {
+				display: none;
+			}
+		}
+	}
+}

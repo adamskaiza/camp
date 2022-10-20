@@ -1,0 +1,12 @@
+.blog-page {
+	background-color: #d9dde3;
+	.container {
+		padding-top: 4rem;
+		padding-bottom: 4rem;
+	}
+	&__posts-grid {
+		@include grid(repeat(4, 1fr), null, 1rem);
+		padding: 2rem;
+		background-color: #fff;
+	}
+}

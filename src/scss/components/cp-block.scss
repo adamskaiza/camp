@@ -1,0 +1,43 @@
+.cp-block {
+	min-height: 313px;
+	&__img-container {
+		max-height: 271px;
+		margin-bottom: 1rem;
+		background-color: #e0e2e5;
+		border-left: 8px solid #16ade1;
+
+		& > img {
+			width: 100%;
+			height: 100%;
+			max-height: 271px;
+
+			z-index: 0;
+			object-fit: cover;
+			object-position: center;
+		}
+	}
+
+	&__info {
+		height: 100%;
+		width: 100%;
+		max-width: 411px;
+	}
+
+	&__title {
+		margin-bottom: 2rem;
+		font: normal normal normal 32px/21px PT Sans;
+		color: #3a5b9c;
+		& > a {
+			color: #3a5b9c;
+		}
+	}
+
+	&--referencje {
+		& > .cp-block__img-container {
+			padding: 3rem;
+			img {
+				max-height: 175px;
+			}
+		}
+	}
+}

@@ -1,0 +1,28 @@
+.desc {
+	max-width: 475px;
+
+	& > h2 {
+		margin: 2rem 0;
+		font: normal normal normal 32px/21px PT Sans;
+		color: #3a5b9c;
+	}
+	& > p {
+		margin-bottom: 1rem;
+		max-width: 744px;
+		font: normal normal normal 22px/30px PT Sans;
+		color: #3a5b9c;
+	}
+	&--thin {
+		max-width: 650px;
+		padding: 4rem;
+		@include breakpoint(m-large) {
+			padding: 1rem;
+		}
+		& > h2 {
+			margin: 0 0 2rem;
+		}
+		& > p {
+			font: normal normal normal 16px/19px PT Sans;
+		}
+	}
+}

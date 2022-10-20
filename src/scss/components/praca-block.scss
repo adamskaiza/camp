@@ -1,0 +1,33 @@
+.praca-block {
+	@include grid(auto 1fr, null, 1rem);
+	margin-bottom: 5rem;
+
+	&__title-wrapper {
+		margin-bottom: 2rem;
+	}
+	&__title {
+		margin-bottom: 0.5rem;
+		font: normal normal normal 32px/21px PT Sans;
+		color: #3a5b9c;
+		& > a {
+			color: #3a5b9c;
+		}
+
+		& + p {
+			font: normal normal normal 17px PT Sans;
+			color: #3a5b9c;
+		}
+	}
+
+	&__content {
+		& > p {
+			font: normal normal normal 16px/21px PT Sans;
+			color: #3a5b9c;
+		}
+	}
+
+	&__info {
+		@include grid(1fr auto, null, 5rem);
+		align-items: center;
+	}
+}

@@ -1,0 +1,52 @@
+.work {
+	background-color: #d9dde3;
+	&__content {
+		&.container {
+			padding-top: 4rem;
+			padding-bottom: 4rem;
+		}
+	}
+
+	&__grid {
+		@include grid(7fr 5fr, null, 1rem);
+		align-items: baseline;
+		position: relative;
+		@include breakpoint(small) {
+			grid-template-columns: 1fr;
+		}
+	}
+
+	&__list {
+		li {
+			margin-bottom: 5rem;
+			color: #3a5b9c;
+
+			h2 {
+				margin-bottom: 2rem;
+				font: normal normal normal 32px PT Sans;
+			}
+			p {
+				font: normal normal normal 16px/21px PT Sans;
+			}
+		}
+	}
+
+	&__offer-block {
+		padding: 4rem;
+		background-color: #fff;
+	}
+	&__contact-block {
+		position: sticky;
+		top: 0;
+		padding: 4rem;
+		color: #fff;
+		background-color: #3a5b9c;
+		h2 {
+			margin-bottom: 2rem;
+			font: normal normal normal 32px PT Sans;
+		}
+		p {
+			font: normal normal normal 16px/21px PT Sans;
+		}
+	}
+}

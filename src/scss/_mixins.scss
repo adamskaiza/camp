@@ -1,0 +1,109 @@
+//media queries breakpoints
+@mixin breakpoint($point) {
+	@if $point==x-large {
+		@media (max-width: 1680px) {
+			@content;
+		}
+	}
+	@if $point==large {
+		@media (max-width: 1439px) {
+			@content;
+		}
+	}
+
+	@if $point==laptop {
+		@media (max-width: 1366px) {
+			@content;
+		}
+	}
+
+	@if $point==m-large {
+		@media (max-width: 1200px) {
+			@content;
+		}
+	} @else if $point==medium {
+		@media (max-width: 1040px) {
+			@content;
+		}
+	} @else if $point==tablet {
+		@media (max-width: 992px) {
+			@content;
+		}
+	} @else if $point==mintablet {
+		@media (max-width: 840px) {
+			@content;
+		}
+	} @else if $point==small {
+		@media (max-width: 768px) {
+			@content;
+		}
+	} @else if $point==xs {
+		@media (max-width: 560px) {
+			@content;
+		}
+	} @else if $point==xxs {
+		@media (max-width: 360px) {
+			@content;
+		}
+	}
+}
+
+@mixin flex($justify, $align, $direction, $gap) {
+	display: flex;
+	justify-content: $justify;
+	align-items: $align;
+	flex-direction: $direction;
+	gap: $gap;
+}
+
+@mixin grid($columns, $rows, $gap) {
+	display: grid;
+	grid-template-columns: $columns;
+	grid-template-rows: $rows;
+	grid-gap: $gap;
+}
+
+@mixin button() {
+	position: relative;
+	display: inline-block;
+	width: calc(190px + $btn-after-width);
+	padding: 1rem;
+
+	font: normal normal normal 16px/19px PT Sans;
+	text-align: center;
+	text-decoration: none;
+	text-indent: -16px;
+
+	color: $c-primary;
+	border: 2px solid $c-secondary;
+	background-color: #fff;
+	border-radius: 0;
+	overflow: hidden;
+
+	transition: all 0.2s linear 0s;
+
+	&:before {
+		content: "➔";
+		position: absolute;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		right: 1rem;
+		top: 0;
+		height: 100%;
+		width: $btn-after-width;
+		color: $c-secondary;
+
+		transition: all 0.2s linear 0s;
+	}
+
+	&:hover {
+		color: $c-primary;
+
+		&:before {
+			opacity: 1;
+			text-indent: 0px;
+			color: $c-secondary;
+		}
+	}
+}

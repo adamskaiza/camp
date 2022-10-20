@@ -1,0 +1,22 @@
+.footer-nav {
+	margin: 1.5rem 0 5rem;
+	h4 {
+		margin-bottom: 1.5rem;
+		font: normal normal normal 26px/21px PT Sans;
+		color: #3a5b9c;
+	}
+
+	ul {
+		font: normal normal normal 16px/17px PT Sans;
+		color: #3b3b3b;
+
+		li {
+			margin-bottom: 1.5rem;
+		}
+	}
+	&--main {
+		.main-menu svg {
+			display: none;
+		}
+	}
+}

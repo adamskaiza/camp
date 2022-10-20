@@ -1,0 +1,50 @@
+.site-button,
+.wpcf7-submit {
+	position: relative;
+	display: inline-block;
+	width: calc(190px + $btn-after-width);
+	padding: 1rem !important;
+
+	font: normal normal normal 16px/19px PT Sans;
+	text-align: center;
+	text-decoration: none;
+	text-indent: -16px;
+
+	color: $c-primary !important;
+	border: 2px solid $c-secondary !important;
+	background-color: #fff !important;
+	border-radius: 0;
+	overflow: hidden;
+
+	transition: all 0.2s linear 0s;
+
+	cursor: pointer;
+	&:before {
+		content: "➔";
+		position: absolute;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		right: 1rem;
+		top: 0;
+		height: 100%;
+		width: $btn-after-width;
+		color: $c-secondary;
+
+		transition: all 0.2s linear 0s;
+	}
+
+	&:hover {
+		color: $c-primary;
+
+		&:before {
+			opacity: 1;
+			text-indent: 0px;
+			color: $c-secondary;
+		}
+	}
+
+	&:visited {
+		color: $c-primary;
+	}
+}

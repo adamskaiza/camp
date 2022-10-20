@@ -1,0 +1,13 @@
+.archive-praca {
+	background-color: #d9dde3;
+	.container {
+		padding-top: 4rem;
+		padding-bottom: 4rem;
+	}
+	&__posts-grid {
+		grid-row-gap: 3rem;
+		grid-column-gap: 1rem;
+		padding: 4rem;
+		background-color: #fff;
+	}
+}

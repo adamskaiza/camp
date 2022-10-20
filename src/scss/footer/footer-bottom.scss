@@ -1,0 +1,14 @@
+.footer-bottom {
+	&__site-info {
+		@include flex(space-between, center, row, 1rem);
+		& > article {
+			font: normal normal normal 12px/15px PT Sans;
+			color: #d9dde3;
+		}
+	}
+	&__logo {
+		svg {
+			width: 45px;
+		}
+	}
+}

@@ -1,0 +1,42 @@
+.header {
+	background-color: #fff;
+	padding: 1rem 0;
+
+	// position: absolute;
+	width: 100%;
+	background-color: rgba(255, 255, 255, 0);
+	z-index: 1;
+
+	.nav__list {
+		&:hover > li > a {
+			color: rgba(255, 255, 255, 0.5);
+		}
+		a {
+			font: normal normal 600 14px/20px Cabin;
+			color: hotpink;
+		}
+
+		li {
+			a {
+				color: hotpink;
+			}
+			&:hover > a {
+				color: hotpink;
+			}
+		}
+
+		&--mobile {
+			a {
+				color: #fff;
+				font: normal normal 900 24px Cabin;
+			}
+		}
+	}
+}
+
+.custom-logo {
+	@include breakpoint(small) {
+		max-width: 220px;
+		object-fit: contain;
+	}
+}
