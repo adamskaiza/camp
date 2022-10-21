@@ -9,14 +9,8 @@
 
 ?>
 
-<?php get_template_part('parts/subpage-hero')?>
+<?php //get_template_part('parts/subpage-hero')?>
 
+<!-- Komponent z video YT i logo -->
+<?php get_template_part('parts/homeVideo');?>
 
-<section class="blog-prev">
-    <?php
-    $blog_prev = get_field('blog_prev');
-    ?>
-    <?php get_template_part('parts/blog-prev', null, [
-        'blog_prev_data' => $blog_prev,
-    ]);?>
-</section>
