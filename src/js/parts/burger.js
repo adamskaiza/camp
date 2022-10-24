@@ -14,7 +14,6 @@ const burger = () => {
 			menuBtn.classList.remove("open");
 			menuOpen = false;
 			navDropdown.classList.remove("active");
-			html.style.overflow = "visible";
 		}
 	});
 };

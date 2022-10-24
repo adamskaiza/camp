@@ -9,9 +9,6 @@
 
 ?>
 
-<?php get_template_part('parts/subpage-hero')?>
-
-
 <section class="blog-prev">
     <?php
     $blog_prev = get_field('blog_prev');
