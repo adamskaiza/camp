@@ -5,7 +5,7 @@
 	// position: absolute;
 	width: 100%;
 	background-color: rgba(255, 255, 255, 0);
-	z-index: 1;
+	z-index: 999;
 
 	// .nav__list {
 	// 	&:hover > li > a {
@@ -45,10 +45,18 @@
 }
 
 .custom-logo {
-	max-width: 130px;
+	max-width: 80px;
 	object-fit: contain;
-	// @include breakpoint(md) {
-	// 	max-width: 220px;
-	// 	object-fit: contain;
-	// }
+}
+
+.site-branding {
+	position: relative;
+	width: 80px;
+	z-index: 9;
+	.custom-logo-link {
+		position: absolute;
+		top: 50%;
+		left: 0;
+		transform: translate(0, -50%);
+	}
 }

@@ -11,15 +11,13 @@
 __webpack_require__.r(__webpack_exports__);
 var burger = function burger() {
   var menuBtn = document.querySelector(".menu-btn");
-  var navDropdown = document.querySelector(".nav-dropdown");
-  var html = document.querySelector("html");
+  var navDropdown = document.querySelector(".nav__item--mobile");
   var menuOpen = false;
   menuBtn.addEventListener("click", function () {
     if (!menuOpen) {
       menuBtn.classList.add("open");
       menuOpen = true;
       navDropdown.classList.add("active");
-      html.style.overflow = "hidden";
     } else {
       menuBtn.classList.remove("open");
       menuOpen = false;

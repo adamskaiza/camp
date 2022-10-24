@@ -39,7 +39,7 @@
 
                 <nav id="site-navigation" class="nav container">
                     <!-- The WordPress Menu goes here -->
-                    <div class="site-branding <?php if(is_front_page()) echo 'site-branding--light'; ?> nav__item">
+                    <div class="site-branding nav__item">
                         <?php the_custom_logo();?>
                     </div><!-- .site-branding -->
                     <?php wp_nav_menu(
@@ -56,5 +56,15 @@
                     <button class="menu-btn" aria-controls="mobile-menu">
                         <div class="menu-btn__burger"></div>
                     </button>
+                    <?php wp_nav_menu(
+					array(
+						'theme_location'  => 'main-menu',
+						'container_class' => 'mobile-menu nav__item nav__item--mobile',
+						'menu_class'      => 'mobile-menu__list nav__list--mobile',
+						'depth'           => 2,
+						'walker'          => new Walker_Nav_Menu(),
+					),
+					
+				); ?>
                 </nav><!-- #site-navigation -->
             </header><!-- #masthead -->
