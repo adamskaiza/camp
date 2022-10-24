@@ -1,7 +1,4 @@
     <div class="homeVideo">
-        <div class="container">
-            <img src="<?php echo get_template_directory_uri(); ?>/src/img/logo-CAMP.png" alt="Camp Logo">
-        </div>
         <div class="iframe-container">
             <?php $videoId='4KhJtE04dt4'; ?>
             <iframe width="auto" height="auto"
