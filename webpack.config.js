@@ -94,7 +94,7 @@ module.exports = function (env) {
 						"**/*.php" /*To jest niezbędne żeby aktualizowały się pliki php*/,
 					port: 3000 /*Domyślny port to 3000 - wa razie kolizji tu można ustawić inny*/,
 					proxy:
-						"http://campclassic.local/" /*Browser sync na localhost - wymaga właczenia wamp lub xamp*/,
+						"http://localhost/wit-camp/" /*Browser sync na localhost - wymaga właczenia wamp lub xamp*/,
 					// proxy: "http://nas.gansa.pl/2021/jakasstrona",                            /*Browser sync na nas.gansa.pl*/
 				})
 			);
