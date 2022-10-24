@@ -1,10 +1,10 @@
 <?php
 /**
- * hydratec functions and definitions
+ * camp functions and definitions
  *
  * @link https://developer.wordpress.org/themes/basics/theme-functions/
  *
- * @package hydratec
+ * @package camp
  */
 
 if ( ! defined( '_S_VERSION' ) ) {
@@ -19,14 +19,14 @@ if ( ! defined( '_S_VERSION' ) ) {
  * runs before the init hook. The init hook is too late for some features, such
  * as indicating support for post thumbnails.
  */
-function hydratec_setup() {
+function camp_setup() {
 	/*
 		* Make theme available for translation.
 		* Translations can be filed in the /languages/ directory.
-		* If you're building a theme based on hydratec, use a find and replace
-		* to change 'hydratec' to the name of your theme in all the template files.
+		* If you're building a theme based on camp, use a find and replace
+		* to change 'camp' to the name of your theme in all the template files.
 		*/
-	load_theme_textdomain( 'hydratec', get_template_directory() . '/languages' );
+	load_theme_textdomain( 'camp', get_template_directory() . '/languages' );
 
 	// Add default posts and comments RSS feed links to head.
 	add_theme_support( 'automatic-feed-links' );
@@ -67,7 +67,7 @@ function hydratec_setup() {
 	add_theme_support(
 		'custom-background',
 		apply_filters(
-			'hydratec_custom_background_args',
+			'camp_custom_background_args',
 			array(
 				'default-color' => 'ffffff',
 				'default-image' => '',
@@ -93,7 +93,7 @@ function hydratec_setup() {
 		)
 	);
 }
-add_action( 'after_setup_theme', 'hydratec_setup' );
+add_action( 'after_setup_theme', 'camp_setup' );
 
 /**
  * Set the content width in pixels, based on the theme's design and stylesheet.
@@ -102,22 +102,22 @@ add_action( 'after_setup_theme', 'hydratec_setup' );
  *
  * @global int $content_width
  */
-function hydratec_content_width() {
-	$GLOBALS['content_width'] = apply_filters( 'hydratec_content_width', 640 );
+function camp_content_width() {
+	$GLOBALS['content_width'] = apply_filters( 'camp_content_width', 640 );
 }
-add_action( 'after_setup_theme', 'hydratec_content_width', 0 );
+add_action( 'after_setup_theme', 'camp_content_width', 0 );
 
 /**
  * Register widget area.
  *
  * @link https://developer.wordpress.org/themes/functionality/sidebars/#registering-a-sidebar
  */
-function hydratec_widgets_init() {
+function camp_widgets_init() {
 	register_sidebar(
 		array(
-			'name'          => esc_html__( 'Sidebar', 'hydratec' ),
+			'name'          => esc_html__( 'Sidebar', 'camp' ),
 			'id'            => 'sidebar-1',
-			'description'   => esc_html__( 'Add widgets here.', 'hydratec' ),
+			'description'   => esc_html__( 'Add widgets here.', 'camp' ),
 			'before_widget' => '<section id="%1$s" class="widget %2$s">',
 			'after_widget'  => '</section>',
 			'before_title'  => '<h2 class="widget-title">',
@@ -125,22 +125,22 @@ function hydratec_widgets_init() {
 		)
 	);
 }
-add_action( 'widgets_init', 'hydratec_widgets_init' );
+add_action( 'widgets_init', 'camp_widgets_init' );
 
 /**
  * Enqueue scripts and styles.
  */
-function hydratec_scripts() {
-	wp_enqueue_style( 'hydratec-style', get_stylesheet_uri(), array(), _S_VERSION );
-	wp_style_add_data( 'hydratec-style', 'rtl', 'replace' );
+function camp_scripts() {
+	wp_enqueue_style( 'camp-style', get_stylesheet_uri(), array(), _S_VERSION );
+	wp_style_add_data( 'camp-style', 'rtl', 'replace' );
 
-	wp_enqueue_script( 'hydratec-navigation', get_template_directory_uri() . '/js/navigation.js', array(), _S_VERSION, true );
+	wp_enqueue_script( 'camp-navigation', get_template_directory_uri() . '/js/navigation.js', array(), _S_VERSION, true );
 
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
 	}
 }
-add_action( 'wp_enqueue_scripts', 'hydratec_scripts' );
+add_action( 'wp_enqueue_scripts', 'camp_scripts' );
 
 /**
  * Implement the Custom Header feature.
@@ -215,16 +215,5 @@ function my_acf_op_init()
 	}
 }
 
-add_filter('wp_nav_menu_objects', 'my_wp_nav_menu_objects', 10, 2);
-function my_wp_nav_menu_objects( $items, $args ) {
-		foreach( $items as &$item ) {
-		$icon = get_field('nav_icon_code', $item);
-		if( $icon ) {
-			$item->title .= $icon;
-		}
-	}
-	return $items;
-
-}
 
 add_post_type_support( 'page', 'excerpt' );

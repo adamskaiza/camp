@@ -500,8 +500,6 @@ p {
   -webkit-transform: translatey(0);
           transform: translatey(0);
   z-index: 2;
-  -webkit-transition: 0.2s;
-  transition: 0.2s;
 }
 
 @-webkit-keyframes pulse {
