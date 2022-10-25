@@ -47,15 +47,20 @@
 }
 */
 h1 {
-  font: normal normal normal 32px/21px PT Sans;
+  font: normal normal normal 32px/21px Open Sans;
 }
 
 h2 {
-  font: normal normal normal 26px/21px PT Sans;
+  font: normal normal normal 26px/21px Open Sans;
 }
 
 p {
-  font: normal normal normal 16px/21px PT Sans;
+  font: normal normal normal 16px/21px Open Sans;
+}
+
+body {
+  font-size: 16px;
+  font-family: Open Sans;
 }
 
 .glide {
@@ -1458,8 +1463,11 @@ p {
 }
 
 .homeVideo {
-  width: 100vw;
+  width: 100%;
+  max-width: 100vw;
   height: 90vh;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
   overflow: hidden;
   position: relative;
 }
@@ -1486,6 +1494,42 @@ p {
   min-height: 100%;
   /* ...and bring it back again */
   margin-left: -200%;
+}
+
+.homeBgBlue {
+  background-size: cover;
+}
+
+.idea {
+  padding: 2rem 0;
+}
+.idea__title {
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  margin: 0 auto;
+  color: white;
+}
+.idea__title h3 {
+  font-size: 3rem;
+  margin-top: -1.8rem;
+}
+.idea__title h4 {
+  font-size: 2rem;
+}
+.idea__title h5 {
+  font-size: 1.3rem;
+  margin-top: -1rem;
+  vertical-align: top;
+}
+.idea__title h3, .idea__title h5 {
+  display: inline-block;
+}
+.idea__content {
+  color: white;
+}
+.idea__content h3 {
+  font-size: 3rem;
 }
 
 .blog-page {
