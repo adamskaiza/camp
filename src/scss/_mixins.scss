@@ -25,6 +25,11 @@
 			@content;
 		}
 	}
+	@if $point==ms {
+		@media (max-width: 500px) {
+			@content;
+		}
+	}
 	@if $point==xs {
 		@media (max-width: 360px) {
 			@content;

@@ -18,18 +18,20 @@
 @import "./footer/footer.scss";
 @import "./footer/footer-nav.scss";
 
-// @import "./components/site-button.scss";
+@import "./components/site-button.scss";
+@import "./components/blog-prev.scss";
 
-// @import "./components/blog-prev.scss";
-// @import "./components/posts-grid.scss";
-
-// @import "./components/post-block.scss";
+@import "./components/post-block.scss";
 
 @import "./components/contacts.scss";
 
+@import "./components/homeVideo";
+@import "./components/homeBgBlue";
+@import "./components/idea";
+
 // @import "./pages-global/blog-page.scss";
-@import "./pages-global/archive-page.scss";
-@import "./pages-global/archive-praca.scss";
+// @import "./pages-global/archive-page.scss";
+// @import "./pages-global/archive-praca.scss";
 
 * {
 	margin: 0;

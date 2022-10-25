@@ -26,16 +26,16 @@
         <!-- <link rel="stylesheet" href="node_modules/aos/dist/aos.css" /> -->
         <!-- <script src="node_modules/aos/dist/aos.js"></script> -->
 
-        <?php wp_head(); ?>
-    </head>
+    <?php wp_head(); ?>
+</head>
 
-    <body <?php body_class(); ?>>
-        <?php wp_body_open(); ?>
-        <div id="page" class="site">
-            <a class="skip-link screen-reader-text"
-                href="#primary"><?php esc_html_e( 'Skip to content', 'camp' ); ?></a>
+<body <?php body_class(); ?>>
+    <?php wp_body_open(); ?>
+    <div id="page" class="site">
+        <a class="skip-link screen-reader-text" href="#primary"><?php esc_html_e( 'Skip to content', 'camp' ); ?></a>
 
-            <header id="masthead" class="header">
+        <header id="masthead" class="header" hidden>
+
 
                 <nav id="site-navigation" class="nav container">
                     <!-- The WordPress Menu goes here -->
@@ -49,7 +49,7 @@
 						'menu_class'      => 'main-menu__list nav__list',
 						'depth'           => 2,
 						'walker'          => new Walker_Nav_Menu(),
-					),
+					)
 					
 				); ?>
 
@@ -68,3 +68,4 @@
 				); ?>
                 </nav><!-- #site-navigation -->
             </header><!-- #masthead -->
+
