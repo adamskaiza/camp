@@ -1,0 +1,30 @@
+.idea {
+    padding: 2rem 0;
+    &__title {
+        width: fit-content;
+        margin: 0 auto;
+        color: white;
+        h3 {
+            font-size: 3rem;
+            margin-top: -1.8rem;
+        }
+        h4 {
+            font-size: 2rem;
+        }
+        h5 {
+            font-size: 1.3rem;
+            margin-top: -1rem;
+            vertical-align: top;
+        }
+        h3, h5 {
+            display: inline-block;
+        }
+    }
+
+    &__content {
+        color: white;
+        h3 {
+            font-size: 3rem;
+        }
+    }
+}

@@ -9,11 +9,17 @@
 
 ?>
 
-<section class="blog-prev">
-    <?php
-    $blog_prev = get_field('blog_prev');
-    ?>
-    <?php get_template_part('parts/blog-prev', null, [
-        'blog_prev_data' => $blog_prev,
-    ]);?>
-</section>
+<?php //get_template_part('parts/subpage-hero')?>
+
+<!-- Komponent z video YT i logo -->
+<?php get_template_part('parts/homeVideo');?>
+
+<div class="homeBgBlue" style="background-image: url(<?php 
+    echo wp_get_attachment_image_url( get_field('home')['bgblue']);
+    ?>); background-color: #1157c1;">
+
+    <!-- Komponent Idea -->
+    <?php get_template_part('parts/idea');?>
+
+</div>
+
