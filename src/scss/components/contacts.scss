@@ -1,11 +1,23 @@
 .contacts {
+	padding: 4rem 0;
+
 	background-color: #fff;
 	background-image: url("/src/img/hexy_calosc.png");
 	background-repeat: no-repeat;
 	background-size: cover;
 	background-position: 20% 20%;
-	&.container {
-		padding: 3rem 2rem;
+	@include breakpoint(sm) {
+		background-size: auto;
+	}
+	// &.container {
+	// 	padding: 3rem 2rem;
+	// }
+
+	h2 {
+		margin-bottom: 6rem;
+
+		color: #2973a5;
+		font-weight: 700;
 	}
 
 	&__list {

@@ -546,9 +546,6 @@ body {
     transform: scale3d(1, 1, 1);
   }
 }
-.footer {
-  padding: 3rem 0;
-}
 .footer__logo {
   padding: 8rem;
   text-align: center;
@@ -725,14 +722,22 @@ body {
 }
 
 .contacts {
+  padding: 4rem 0;
   background-color: #fff;
   background-image: url(../dist/images/hexy_calosc.png);
   background-repeat: no-repeat;
   background-size: cover;
   background-position: 20% 20%;
 }
-.contacts.container {
-  padding: 3rem 2rem;
+@media (max-width: 576px) {
+  .contacts {
+    background-size: auto;
+  }
+}
+.contacts h2 {
+  margin-bottom: 6rem;
+  color: #2973a5;
+  font-weight: 700;
 }
 .contacts__list {
   display: grid;
