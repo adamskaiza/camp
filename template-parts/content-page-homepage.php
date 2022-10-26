@@ -15,7 +15,7 @@
 <?php get_template_part('parts/homeVideo');?>
 
 <div class="homeBgBlue" style="background-image: url(<?php 
-    echo wp_get_attachment_image_url( get_field('home')['bgblue']);
+    echo wp_get_attachment_image_url( get_field('home')['bgblue'], 'full');
     ?>); background-color: #1157c1;">
 
     <!-- Komponent Idea -->
