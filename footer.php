@@ -13,7 +13,7 @@
 
 <footer id="colophon" class="footer">
     <section id="contacts" class="contacts">
-        <h2 class="contacts__heading container">KONTAKT</h2>
+        <h2 class="contacts__heading container h2">KONTAKT</h2>
         <?php $contacts = get_field('footer_contacts', 'options');?>
         <ol class="contacts__list container">
             <?php foreach($contacts as $contact) :?>
