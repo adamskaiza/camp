@@ -1,21 +1,18 @@
-.crew {
-	padding: 3rem 0;
-	h2 {
-		margin-bottom: 6rem;
-		text-transform: uppercase;
-		color: #2973a5;
-		font-weight: 700;
-	}
-
-	&__list {
-		@include grid(repeat(4, 1fr), null, 2rem);
-		text-align: center;
-		@include breakpoint(sm) {
-			grid-template-columns: 1fr 1fr;
-		}
+.crew-list {
+	@include grid(repeat(4, 1fr), null, 2rem);
+	text-align: center;
+	@include breakpoint(sm) {
+		grid-template-columns: 1fr 1fr;
 	}
 
 	&__item {
+		h3 {
+			text-transform: uppercase;
+			font-weight: 700;
+		}
+		p {
+			font-weight: 500;
+		}
 		img {
 			width: 100%;
 			border-radius: 50%;
