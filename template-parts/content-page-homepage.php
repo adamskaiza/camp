@@ -23,3 +23,12 @@
 
 </div>
 
+<?php get_template_part('parts/crew-list', null, [
+    'post_type' => 'prelegenci',
+]);?>
+<?php get_template_part('parts/crew-list', null, [
+    'post_type' => 'mentorzy',
+]);?>
+<?php get_template_part('parts/crew-list', null, [
+    'post_type' => 'trenerzy',
+]);?>
