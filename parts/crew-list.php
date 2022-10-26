@@ -11,17 +11,11 @@ $crew = get_posts($post_args);
         <?php if(is_front_page())  :?>
         <h2><?php echo $args['post_type'];?></h2>
         <?php endif ;?>
-        <ul class="crew__list">
+        <ul class="crew__list crew-list">
             <?php foreach($crew as $post) :?>
-            <li class="crew__item">
-                <?php setup_postdata($post); ?>
-                <a href="<?php echo the_permalink();?>">
-                    <?php the_post_thumbnail('medium');?>
-                    <h3><?php the_title();?></h3>
-                    <?php the_excerpt();?>
-                </a>
-                <?php wp_reset_postdata(); ?>
-            </li>
+            <?php setup_postdata($post); ?>
+            <?php get_template_part('parts/crew-item');?>
+            <?php wp_reset_postdata(); ?>
             <?php endforeach;?>
         </ul>
     </section>
