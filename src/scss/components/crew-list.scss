@@ -6,6 +6,13 @@
 	}
 
 	&__item {
+		h3 {
+			text-transform: uppercase;
+			font-weight: 700;
+		}
+		p {
+			font-weight: 500;
+		}
 		img {
 			width: 100%;
 			border-radius: 50%;

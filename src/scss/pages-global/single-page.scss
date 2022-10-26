@@ -1,0 +1,42 @@
+.single-page {
+	&__content {
+		padding: 3rem 0;
+		background-color: #e6f1fa;
+		background-image: url("/src/img/hexagony-white.svg");
+		background-repeat: no-repeat;
+		background-size: auto;
+		background-position: -20% 40%;
+		@include breakpoint(lg) {
+			background-position: -60% 40%;
+		}
+		@include breakpoint(md) {
+			background-position: left;
+		}
+		h1 {
+			font-weight: 700;
+		}
+		p {
+			font-weight: 500;
+			&:first-of-type {
+				font-weight: 700;
+			}
+		}
+	}
+
+	&__grid {
+		@include grid(auto 1fr, null, 2rem);
+		@include breakpoint(sm) {
+			grid-template-columns: 1fr;
+		}
+
+		img {
+			max-width: 300px;
+			aspect-ratio: 1;
+			object-fit: cover;
+			border-radius: 50%;
+			@include breakpoint(sm) {
+				max-width: 150px;
+			}
+		}
+	}
+}
