@@ -14,9 +14,9 @@ $crew = get_posts($post_args);
             <li class="crew__item">
                 <?php setup_postdata($post); ?>
                 <a href="<?php echo the_permalink();?>">
-                    <?php the_post_thumbnail('thumbnail');?>
+                    <?php the_post_thumbnail('medium');?>
                     <h3><?php the_title();?></h3>
-                    <p><?php the_excerpt();?></p>
+                    <?php the_excerpt();?>
                 </a>
                 <?php wp_reset_postdata(); ?>
             </li>
