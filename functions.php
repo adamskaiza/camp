@@ -217,31 +217,3 @@ function my_acf_op_init()
 
 
 add_post_type_support( 'page', 'excerpt' );
-
-
-add_action( 'wp_default_scripts', 'move_jquery_into_footer' );
-function move_jquery_into_footer( $wp_scripts ) {
-
-	if ( is_admin() ) {
-		return;
-	}
-
-	$wp_scripts->add_data( 'jquery', 'group', 1 );
-	$wp_scripts->add_data( 'jquery-core', 'group', 1 );
-	$wp_scripts->add_data( 'jquery-migrate', 'group', 1 );
-}
-
-
-function remove_wp_block_library_css() {
-   if (is_front_page()) {
-       wp_dequeue_style('wp-block-library');
-       wp_dequeue_style('wp-block-library-theme');
-
-       remove_action('wp_body_open', 'wp_global_styles_render_svg_filters');
-       remove_action('render_block', 'wp_render_duotone_support', 10);
-       remove_action('wp_enqueue_scripts', 'wp_enqueue_global_styles');
-       remove_action('wp_footer', 'wp_enqueue_global_styles', 1);
-   }
-}
-
-add_action('wp_enqueue_scripts', 'remove_wp_block_library_css', 10);
