@@ -21,8 +21,7 @@
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link media="print" onload="this.onload=null;this.removeAttribute('media');"
-            href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700;800&display=swap"
+        <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700;800&display=swap"
             rel="stylesheet">
         <!-- <link rel="stylesheet" href="node_modules/aos/dist/aos.css" /> -->
         <!-- <script src="node_modules/aos/dist/aos.js"></script> -->
