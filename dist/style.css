@@ -1019,23 +1019,52 @@ body {
   color: #2973a5;
   font-weight: 700;
 }
-.crew__list {
+
+.crew-list {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   grid-gap: 2rem;
   text-align: center;
 }
 @media (max-width: 576px) {
-  .crew__list {
+  .crew-list {
     grid-template-columns: 1fr 1fr;
   }
 }
-.crew__item img {
+.crew-list__item img {
   width: 100%;
   border-radius: 50%;
   aspect-ratio: 1;
   -o-object-fit: cover;
      object-fit: cover;
+}
+
+.archive-page__header {
+  padding: 3rem 0;
+  background-color: #e6f1fa;
+  background-image: url(../dist/images/hexagony-white.svg);
+  background-repeat: no-repeat;
+  background-size: 40%;
+  background-position: -10% 40%;
+}
+@media (max-width: 768px) {
+  .archive-page__header {
+    background-size: 60%;
+    background-position: -30% 40%;
+  }
+}
+@media (max-width: 576px) {
+  .archive-page__header {
+    background-size: 80%;
+    background-position: -50% 40%;
+  }
+}
+.archive-page__header h1 {
+  color: #2973a5;
+  font-weight: 700;
+}
+.archive-page__content {
+  padding: 3rem 0;
 }
 
 * {
