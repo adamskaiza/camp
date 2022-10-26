@@ -12,11 +12,12 @@
 			color: rgba(0, 0, 0, 0.5);
 		}
 		li {
-			padding: 1rem 0;
+			padding: 1.5rem 0;
 			a {
 				display: inline-block;
 				padding: 0.5rem 1rem;
-				font: normal normal 600 14px/20px "Open Sans";
+				font: normal normal 400 14px/20px "Open Sans";
+				letter-spacing: .08rem;
 				color: $c-header-link;
 				text-transform: uppercase;
 			}
@@ -25,15 +26,27 @@
 			}
 
 			&:last-child {
-				padding: 1rem 1.5rem;
-				-webkit-clip-path: polygon(100% 0, 80% 100%, 20% 100%, 0 0);
-				clip-path: polygon(100% 0, 80% 100%, 20% 100%, 0 0);
+				padding: 1.5rem 2rem 2rem;
+				margin-bottom: -.5rem;
+				-webkit-clip-path: polygon(100% 0, 75% 100%, 25% 100%, 0 0);
+				clip-path: polygon(100% 0, 75% 100%, 25% 100%, 0 0);
 				background-color: #bd1e2c;
 				z-index: 9;
 				a {
 					font-size: 20px;
 					font-weight: 700;
 					color: #fff;
+				}
+			}
+			&.current-menu-item a {
+				position: relative;
+				&::after {
+					content: '';
+					position: absolute;
+					bottom: 0;
+					left: 1rem;
+					width: 2rem;
+					border-bottom: 5px solid black;
 				}
 			}
 		}
