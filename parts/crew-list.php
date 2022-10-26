@@ -8,7 +8,9 @@ $crew = get_posts($post_args);
 ?>
 <section id="<?php echo $args['post_type'];?>" class="crew">
     <section class="crew__content container">
+        <?php if(is_front_page())  :?>
         <h2><?php echo $args['post_type'];?></h2>
+        <?php endif ;?>
         <ul class="crew__list">
             <?php foreach($crew as $post) :?>
             <li class="crew__item">
