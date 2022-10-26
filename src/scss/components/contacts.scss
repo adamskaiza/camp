@@ -9,16 +9,6 @@
 	@include breakpoint(sm) {
 		background-size: auto;
 	}
-	// &.container {
-	// 	padding: 3rem 2rem;
-	// }
-
-	h2 {
-		margin-bottom: 6rem;
-
-		color: #2973a5;
-		font-weight: 700;
-	}
 
 	&__list {
 		@include grid(repeat(3, 1fr), null, 0);
