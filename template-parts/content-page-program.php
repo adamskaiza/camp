@@ -8,5 +8,8 @@
  */
 
 ?>
-
-<?php get_template_part('parts/program-tabs');?>
+<?php
+$program = get_field('program');?>
+<?php get_template_part('parts/program-tabs', null, [
+    'custom_field' => $program,
+]);?>
