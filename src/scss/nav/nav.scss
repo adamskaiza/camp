@@ -17,7 +17,7 @@
 				display: inline-block;
 				padding: 0.5rem 1rem;
 				font: normal normal 400 14px/20px "Open Sans";
-				letter-spacing: .08rem;
+				letter-spacing: 0.08rem;
 				color: $c-header-link;
 				text-transform: uppercase;
 			}
@@ -27,7 +27,7 @@
 
 			&:last-child {
 				padding: 1.5rem 2rem 2rem;
-				margin-bottom: -.5rem;
+				margin-bottom: -0.5rem;
 				-webkit-clip-path: polygon(100% 0, 75% 100%, 25% 100%, 0 0);
 				clip-path: polygon(100% 0, 75% 100%, 25% 100%, 0 0);
 				background-color: #bd1e2c;
@@ -41,7 +41,7 @@
 			&.current-menu-item a {
 				position: relative;
 				&::after {
-					content: '';
+					content: "";
 					position: absolute;
 					bottom: 0;
 					left: 1rem;
@@ -70,10 +70,7 @@
 				}
 			}
 			li:last-child {
-				animation-name: pulse;
-				animation-duration: 5s;
-				animation-fill-mode: both;
-				animation-iteration-count: infinite;
+				animation: pulse 4s both infinite;
 
 				@include breakpoint(lg) {
 					display: flex;
