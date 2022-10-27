@@ -29,7 +29,7 @@
         <?php wp_head(); ?>
     </head>
 
-    <body <?php body_class(); ?>>
+    <body>
         <?php wp_body_open(); ?>
         <div id="page" class="site">
             <a class="skip-link screen-reader-text"
