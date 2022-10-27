@@ -21,10 +21,10 @@
         <?php foreach ($program as $item) : ?>
         <article data-display="<?php echo $item['heading'];?>"
             class="program-tabs__content  tabs-content <?php echo $tab_content_counter === 1 ? 'tabs-content--visible' : '';?>">
-            <img src="<?php echo get_stylesheet_directory_uri() . '/src/img/dzien' . $tab_content_counter . '.jpg';?>"
+            <img src="<?php echo get_stylesheet_directory_uri() . '/img/dzien' . $tab_content_counter . '.jpg';?>"
                 alt="Baner tabu">
             <article class="program-tabs__line"
-                style="background-image: url(<?php echo get_stylesheet_directory_uri() . '/src/img/hex_dzien_' . $tab_content_counter . '.png';?>)">
+                style="background-image: url(<?php echo get_stylesheet_directory_uri() . '/dist/images/hex_dzien_' . $tab_content_counter . '.png';?>)">
                 <div class="program-tabs__line-wrapper container">
                     <?php echo $item['title'];?>
 
