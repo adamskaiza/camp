@@ -8,3 +8,5 @@
  */
 
 ?>
+
+<?php get_template_part('parts/program-tabs');?>
