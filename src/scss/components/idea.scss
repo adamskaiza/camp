@@ -2,7 +2,7 @@
     padding: 2rem 0;
     &__title {
         width: fit-content;
-        margin: 0 auto;
+        margin: 0 auto 5%;
         color: white;
         h3 {
             font-size: 3rem;
@@ -23,8 +23,12 @@
 
     &__content {
         color: white;
+        font-weight: 200;
+        padding-right: 20%;
         h3 {
             font-size: 3rem;
+            font-weight: 900;
+            height: 4rem;
         }
     }
 }

@@ -1,0 +1,73 @@
+.hexnumbers {
+    color: white;
+    
+    display: flex;
+    aspect-ratio: 3/1;
+
+    margin-top: 15%;
+
+    &__tile {
+        background: url(/src/img/hex_5.svg);
+        background-repeat: no-repeat;
+        background-size: contain;
+        
+        flex: 1;
+
+        box-sizing: border-box;
+        padding: 5%;
+        text-align: center;
+
+        &:nth-child(2) {
+            margin: -15% -8% 0;
+        }
+
+
+        &:nth-child(1) & {
+            &_number {
+                color: rgb(208, 232, 82);
+            }
+        }
+        &:nth-child(2) & {
+            &_number {
+                color: rgb(255, 193, 1);
+            }
+        }
+        &:nth-child(3) & {
+            &_number {
+                color: rgb(78, 227, 185);
+            }
+        }
+
+        &_number {
+            font-size: 5.5rem;
+            font-weight: 800;
+            @include breakpoint(lg) {
+                font-size: 3.5;
+            }
+        }
+        &_caption {
+            font-size: 1.4rem;
+            line-height: 1.5rem;
+            @include breakpoint(md) {
+                font-size: 1rem;
+            }
+        }
+
+        &--image {
+            img {
+                position: relative;
+                left: -120%;
+                top: -40%;
+                transform: scale(2);
+                @include breakpoint(lg) {
+                    transform: scale(1.5);
+                    left: -100%;
+                }
+                @include breakpoint(md) {
+                    transform: scale(1);
+                    left: -100%;
+                }
+            }
+        }
+    }
+}
