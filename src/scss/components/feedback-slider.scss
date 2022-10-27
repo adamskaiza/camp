@@ -1,0 +1,22 @@
+.feedback-slider {
+	.glide {
+		&__bullets {
+			bottom: unset;
+		}
+		&__bullet {
+			background-color: rgba(41, 115, 165, 0.5);
+			&--active {
+				background-color: rgba(41, 115, 165, 1);
+			}
+		}
+
+		&__slide {
+			p {
+				&:first-of-type {
+					font-weight: 500;
+					text-transform: uppercase;
+				}
+			}
+		}
+	}
+}

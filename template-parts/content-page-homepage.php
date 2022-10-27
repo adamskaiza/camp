@@ -23,6 +23,8 @@
 
 </div>
 
+<?php get_template_part('parts/feedback-slider');?>
+
 <?php get_template_part('parts/crew-list', null, [
     'post_type' => 'prelegenci',
 ]);?>

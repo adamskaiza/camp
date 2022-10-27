@@ -27,6 +27,8 @@
 @import "./components/crew.scss";
 @import "./components/crew-list.scss";
 @import "./components/partners.scss";
+@import "./components/feedback.scss";
+@import "./components/feedback-slider.scss";
 
 @import "./pages-global/archive-page.scss";
 @import "./pages-global/single-page.scss";
@@ -71,11 +73,17 @@ a {
 	padding: 0 1rem;
 }
 
-.h2 {
-	margin-bottom: 6rem;
+.h2,
+.h3 {
 	color: #2973a5;
 	font-weight: 700;
 	text-transform: uppercase;
+}
+.h2 {
+	margin-bottom: 6rem;
+}
+.h3 {
+	margin-bottom: 0.5rem;
 }
 
 h1.h2 {
