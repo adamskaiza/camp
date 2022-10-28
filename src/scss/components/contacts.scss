@@ -26,7 +26,7 @@
 			@include flex(center, center, column, null);
 			position: relative;
 			// min-height: 390px;
-			aspect-ratio: 1;
+			aspect-ratio: 1.1;
 			margin: 0.5rem 0;
 			// clip-path: polygon(25% 0, 75% 0, 100% 50%, 75% 100%, 25% 100%, 0 50%);
 			// @include breakpoint(xl) {
