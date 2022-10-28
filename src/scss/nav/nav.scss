@@ -25,19 +25,6 @@
 				color: #bd1e2c;
 			}
 
-			&:last-child {
-				padding: 1.5rem 2rem 2rem;
-				margin-bottom: -0.5rem;
-				-webkit-clip-path: polygon(100% 0, 75% 100%, 25% 100%, 0 0);
-				clip-path: polygon(100% 0, 75% 100%, 25% 100%, 0 0);
-				background-color: #bd1e2c;
-				z-index: 9;
-				a {
-					font-size: 20px;
-					font-weight: 700;
-					color: #fff;
-				}
-			}
 			&.current-menu-item a {
 				position: relative;
 				&::after {
@@ -49,6 +36,12 @@
 					border-bottom: 5px solid black;
 				}
 			}
+			&.current-menu-item.menu-item-object-custom a {
+				position: static;
+				&::after {
+					display: none;
+				}
+			}
 		}
 
 		&--mobile {
@@ -58,6 +51,24 @@
 			a {
 				color: $c-header-link-mobile;
 				font: normal normal 900 32px "Open Sans";
+			}
+		}
+	}
+
+	.aplikuj-button {
+		padding: 1.5rem 2rem 2rem;
+		margin-bottom: -0.5rem;
+		-webkit-clip-path: polygon(100% 0, 75% 100%, 25% 100%, 0 0);
+		clip-path: polygon(100% 0, 75% 100%, 25% 100%, 0 0);
+		background-color: #bd1e2c;
+		z-index: 9;
+		a {
+			font-size: 20px;
+			font-weight: 700;
+			color: #fff;
+
+			&:hover {
+				color: #fff;
 			}
 		}
 	}
