@@ -31,6 +31,7 @@
                     <?php echo $item['title'];?>
                     <p>Dzień <?php echo $tab_content_counter;?></p>
                     <section class="program__program program">
+                        <?php if($item['components']): ?>
                         <?php foreach ($item['components'] as $program_component): ?>
 
                         <?php get_template_part('parts/program-component', null, [
@@ -39,6 +40,7 @@
                             'component_content' => $program_component['component_content'],
                             ]);?>
                         <?php endforeach;?>
+                        <?php endif;?>
                     </section>
                 </div>
 
