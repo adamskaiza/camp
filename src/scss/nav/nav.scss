@@ -113,6 +113,10 @@
 	}
 }
 
+.hide {
+	display: none;
+}
+
 .active {
 	transform: translatey(0);
 	z-index: 2;
