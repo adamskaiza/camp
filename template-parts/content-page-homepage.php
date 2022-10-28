@@ -21,8 +21,11 @@
     <!-- Komponent idea -->
     <?php get_template_part('parts/idea');?>
 
-    <!-- Komponent hexnumbers -->
-    <?php get_template_part('parts/hexnumbers');?>
+    <!-- Komponent hexNumbers -->
+    <?php get_template_part('parts/hexNumbers');?>
+
+    <!-- Komponent hexProgram -->
+    <?php get_template_part('parts/hexProgram');?>
 
 </div>
 
