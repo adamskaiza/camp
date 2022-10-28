@@ -1,7 +1,7 @@
-$background: #f0ecea;
+$background: #7afed7;
 $border: #e5d6c1;
 
-$text: #264c39;
+$text: #000;
 .acc-block {
 	width: 100%;
 }
@@ -30,7 +30,7 @@ $text: #264c39;
 			background: darken($background, 10%);
 		}
 		&::after {
-			content: url("/src/img/arrow-down.svg");
+			// content: url("/src/img/arrow-down.svg");
 			width: 1em;
 			height: 1em;
 			text-align: center;
@@ -45,7 +45,8 @@ $text: #264c39;
 		background: $background;
 		transition: all 0.35s;
 		& > p {
-			font: normal normal normal 16px/24px Poppins !important;
+			margin-bottom: 0;
+			padding: 1rem;
 		}
 
 		& ul {

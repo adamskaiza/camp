@@ -1,0 +1,20 @@
+.program-component {
+	&__what {
+		@include flex(flex-start, center, row, 1rem);
+		& > * {
+			margin: 0;
+			font-weight: 700;
+		}
+	}
+	ul,
+	ol {
+		padding-left: 2rem;
+		padding-bottom: 1rem;
+	}
+	ul {
+		list-style: disc;
+	}
+	ol {
+		list-style: lower-latin;
+	}
+}
