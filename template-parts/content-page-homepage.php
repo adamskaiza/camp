@@ -18,8 +18,14 @@
     echo wp_get_attachment_image_url( get_field('home')['bgblue'], 'full');
     ?>); background-color: #1157c1;">
 
-    <!-- Komponent Idea -->
+    <!-- Komponent idea -->
     <?php get_template_part('parts/idea');?>
+
+    <!-- Komponent hexNumbers -->
+    <?php get_template_part('parts/hexNumbers');?>
+
+    <!-- Komponent hexProgram -->
+    <?php get_template_part('parts/hexProgram');?>
 
 </div>
 

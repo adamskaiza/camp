@@ -1,0 +1,84 @@
+.hexProgram {
+    margin-top: 20rem;
+    &__title {
+        font-size: 2rem;
+        font-weight: 800;
+        color: white;
+        max-width: 40%;
+        &_subtitle {
+            font-size: 4.5rem;
+            line-height: 4rem;
+        }
+    }
+
+    &__tiles {
+        display: flex;
+        flex-wrap: wrap;
+
+        &_hex {
+            background-size: contain;
+            background-repeat: no-repeat;
+            flex: 0 0 50%;
+            aspect-ratio: 1/1;
+            min-width: 440px;
+            position: relative;
+            padding: 10%;
+            text-align: center;
+            * {
+                position: relative;
+                z-index: 20;
+            }
+            &--bg {
+                position: absolute;
+                left: -15%;
+                top: 0;
+                z-index: 10;
+                max-width: 130%;
+                width: 130%;
+            }
+            &--title {
+                font-weight: 800;
+                font-size: 1.5rem;
+                line-height: 1.5rem;
+            }
+            &--content {
+                text-align: left;
+                margin-top: 1rem;
+            }
+            &--sideimage {
+                position: absolute;
+                width: 60%;
+            }
+
+            &:nth-child(1) &--sideimage {
+                left: -10%;
+                bottom: -20%;
+            }
+            &:nth-child(2) &--sideimage {
+                right: -20%;
+                top: -10%;
+            }
+            &:nth-child(3) &--sideimage {
+                right: -35%;
+                bottom: -30%;
+            }
+            &:nth-child(4) &--sideimage {
+                right: -20%;
+                top: -10%;
+            }
+
+            &:nth-child(2) { 
+                margin-top: -25%;
+                left: -5%;
+            }
+            &:nth-child(3) { 
+                // margin-top: -1%;
+                right: -2%;
+            }
+            &:nth-child(4) { 
+                margin-top: -27%;
+                left: -6%;
+            }
+        }
+    }
+}

@@ -2,6 +2,8 @@
 @import "./mixins";
 @import "./typography";
 
+@import "./global";
+
 //Required Core Stylesheet
 @import "node_modules/@glidejs/glide/src/assets/sass/glide.core";
 //Optional Theme Stylesheet
@@ -17,6 +19,9 @@
 @import "./footer/footer-bottom.scss";
 @import "./footer/footer.scss";
 
+@import "./pages-global/archive-page.scss";
+@import "./pages-global/single-page.scss";
+
 @import "./components/post-block.scss";
 
 @import "./components/contacts.scss";
@@ -24,6 +29,8 @@
 @import "./components/homeVideo";
 @import "./components/homeBgBlue";
 @import "./components/idea";
+@import "./components/hexNumbers";
+@import "./components/hexProgram";
 @import "./components/crew.scss";
 @import "./components/crew-list.scss";
 @import "./components/partners.scss";
@@ -32,72 +39,3 @@
 @import "./components/tabs.scss";
 @import "./components/program-tabs.scss";
 
-@import "./pages-global/archive-page.scss";
-@import "./pages-global/single-page.scss";
-
-* {
-	margin: 0;
-	padding: 0;
-	box-sizing: border-box;
-}
-
-html {
-	scroll-behavior: smooth;
-}
-body {
-	margin-top: 84px;
-}
-ul,
-ol {
-	list-style: none;
-	margin: 0;
-	padding: 0;
-}
-
-a {
-	color: unset;
-	text-decoration: none;
-
-	&:hover {
-		color: unset;
-		text-decoration: none;
-	}
-	&:visited {
-		color: unset;
-		text-decoration: none;
-	}
-}
-
-.container {
-	width: 100%;
-	max-width: 1240px;
-	margin: 0 auto;
-	padding: 0 1rem;
-}
-
-.h2,
-.h3 {
-	color: #2973a5;
-	font-weight: 700;
-	text-transform: uppercase;
-}
-.h2 {
-	margin-bottom: 6rem;
-}
-.h3 {
-	margin-bottom: 0.5rem;
-}
-
-h1.h2 {
-	margin-bottom: 2.5rem;
-}
-
-.separator {
-	width: 100%;
-	height: 2px;
-	background-color: #16ade1;
-	&--col {
-		width: 2px;
-		height: 100%;
-	}
-}

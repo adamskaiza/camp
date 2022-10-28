@@ -36,50 +36,8 @@
 		}
 	}
 }
-/*
-	@if $point==large {
-		@media (max-width: 1439px) {
-			@content;
-		}
-	}
 
-	@if $point==laptop {
-		@media (max-width: 1366px) {
-			@content;
-		}
-	}
 
-	@if $point==m-large {
-		@media (max-width: 1200px) {
-			@content;
-		}
-	} @else if $point==medium {
-		@media (max-width: 1040px) {
-			@content;
-		}
-	} @else if $point==tablet {
-		@media (max-width: 992px) {
-			@content;
-		}
-	} @else if $point==mintablet {
-		@media (max-width: 840px) {
-			@content;
-		}
-	} @else if $point==small {
-		@media (max-width: 768px) {
-			@content;
-		}
-	} @else if $point==xs {
-		@media (max-width: 560px) {
-			@content;
-		}
-	} @else if $point==xxs {
-		@media (max-width: 360px) {
-			@content;
-		}
-	}
-}
-*/
 @mixin flex($justify, $align, $direction, $gap) {
 	display: flex;
 	justify-content: $justify;

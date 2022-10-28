@@ -1,15 +1,16 @@
-    <section class="idea" id="idea">
-        <div class="container">
+<section class="idea" id="idea">
+    <div class="container">
 
-            <?php $data=get_field('idea'); ?>
+        <?php $data=get_field('idea'); ?>
 
-            <div class="idea__title">
-                <?php echo $data['title']; ?>
-            </div>
-
-            <article class="idea__content">
-                <?php echo $data['content']; ?>
-            </article>
-
+        <div class="idea__title">
+            <h4><?php echo $data['title']['first']; ?></h4>
+            <h5><?php echo $data['title']['second']; ?></h5> <h3><?php echo $data['title']['third']; ?></h3>
         </div>
-    </section>
+
+        <article class="idea__content">
+            <?php echo $data['content']; ?>
+        </article>
+
+    </div>
+</section>
