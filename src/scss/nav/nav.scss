@@ -11,6 +11,10 @@
 			transition: 0.2s;
 			color: rgba(0, 0, 0, 0.5);
 		}
+		&:hover > li.aplikuj-button > a {
+			transition: 0.2s;
+			color: rgba(255, 255, 255, 0.5);
+		}
 		li {
 			padding: 1.5rem 0;
 			a {
@@ -62,6 +66,9 @@
 		clip-path: polygon(100% 0, 75% 100%, 25% 100%, 0 0);
 		background-color: #bd1e2c;
 		z-index: 9;
+		&:hover a {
+			color: #fff !important;
+		}
 		a {
 			font-size: 20px;
 			font-weight: 700;
@@ -69,9 +76,6 @@
 
 			&:hover {
 				color: #fff;
-			}
-			&:hover a {
-				color: #fff !important;
 			}
 		}
 	}
