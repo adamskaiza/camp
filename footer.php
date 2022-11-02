@@ -20,7 +20,7 @@
             <li>
                 <h3><?php echo $contact['name'];?></h3>
                 <?php echo $contact['content'];?>
-                <?php echo wp_get_attachment_image($contact['avatar'], 'thumbnail');?>
+                <?php echo wp_get_attachment_image($contact['avatar'], 'medium');?>
             </li>
             <?php endforeach;?>
         </ol>
