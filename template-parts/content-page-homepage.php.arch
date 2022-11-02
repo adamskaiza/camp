@@ -11,13 +11,11 @@
 
 <?php //get_template_part('parts/subpage-hero')?>
 
-<?php $acf = get_fields(); ?>
-
 <!-- Komponent z video YT i logo -->
 <?php get_template_part('parts/homeVideo');?>
 
 <div class="homeBgBlue" style="background-image: url(<?php 
-    echo wp_get_attachment_image_url( $acf['home']['bgblue'], 'full');
+    echo wp_get_attachment_image_url( get_field('home')['bgblue'], 'full');
     ?>); background-color: #1157c1;">
 
     <!-- Komponent idea -->
@@ -33,10 +31,12 @@
 
 <?php get_template_part('parts/feedback-slider');?>
 
-<?php get_template_part('parts/crew-list', null, [
-    'taxonomy_name' => 'Prelegenci',
-]); ?>
+<?php /* get_template_part('parts/crew-list', null, [
+    'post_type' => 'prelegenci',
+]);?>
 
+<?php var_dump(get_fields()) */?>
+<?php $partners_arr = get_field('logotypes');?>
 <?php get_template_part('parts/partners', null, [
-    'partners' => $acf['logotypes'],
+    'partners' => $partners_arr,
 ]);?>

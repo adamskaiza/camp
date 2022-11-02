@@ -217,3 +217,63 @@ function my_acf_op_init()
 
 
 add_post_type_support( 'page', 'excerpt' );
+
+
+// Kod z StackOverflow - nie dizala, albo zle używam - dod wywalenia raczej
+
+function get_taxonomy_posts( int $number = 4, string $taxonomy = 'your-taxonomy', $term_slug = 'your-term-slug' ) {
+
+	$args = [
+	   'posts_per_page'         => $number,
+	   'post_type'              => 'osoby',
+	   'no_found_rows'          => true,
+	   'update_post_meta_cache' => false,
+	   'update_post_term_cache' => false,
+	   'tax_query'              => [
+		  [
+			 'taxonomy' => $taxonomy,
+			 'field'    => 'slug',
+			 'terms'    => $term_slug,
+		  ],
+	   ],
+	];
+ 
+	$post_tax_query  = new WP_Query( $args );
+	$post_by_tax_ids = wp_list_pluck( $post_tax_query->posts, 'ID' ); // So that we don't have to do query twice,when we have sufficient results
+	$the_post_count = count( $post_by_tax_ids );
+ 
+	// If we have sufficient no of results, early return.
+	if ( $number == $the_post_count ) {
+	   return $post_tax_query;
+	}
+ 
+	// Otherwise get default posts and merge the two set of ids.
+	$args['tax_query']        = [];
+	$args['fields']           = 'ids';
+	$args['posts_per_page']   = ( $number - $the_post_count ) + $the_post_count; // So that duplicates could be removed later.
+	$post_default_post_query = new WP_Query( $args );
+	$ids                      = array_merge( $post_by_tax_ids, $post_default_post_query->posts );
+ 
+	// Get the posts and with retained order.
+	$all_posts_args = [
+	   'post__in'       => $ids,
+	   'posts_per_page' => $number,
+	   'orderby'        => 'post__in',
+	];
+ 
+	$my_query = new WP_Query( array_merge( $args, $all_posts_args ) );
+
+	$posts = array();
+
+	if($my_query->have_posts()) :
+		while ($my_query->have_posts()) : $my_query->the_post();
+
+			array_push($posts,$my_query->the_post() ); 
+
+		 endwhile;
+	endif;
+
+	return $posts;
+
+ 
+ }

@@ -1,27 +1,28 @@
 <?php
 
-$taxonomy = $args['post_type'];
-   
-$post_args = array(
-    'post_type'   => 'osoby',
-    'tax_query' => array(
-        array(
-            'taxonomy' => $taxonomy,
-            'field' => 'name',
-            'terms' => $taxonomy,
-        )
-    )
-);
+
+    $taxonomy_name = $args['taxonomy_name'];
 
 
-$crew = get_posts($post_args) ?? array();
+    $post_args = array(
+        'post_type' => 'osoby',
+        'tax_query' => array(
+                    array(
+                        'taxonomy' => 'role',
+                        'field' => 'slug',
+                        'terms' => 'prelegenci' // roboczo perlegentow wrzucam
+                    )
+                )
+        );
+        
 
-// var_dump($crew)
+    $crew = get_posts($post_args);
+
 ?>
-<section id="<?php echo $taxonomy;?>" class="crew">
+<section id="<?php echo $taxonomy_name;?>" class="crew">
     <section class="crew__content container">
         <?php if(is_front_page() || is_singular())  :?>
-        <h2 class="h2"><?php echo $taxonomy;?></h2>
+        <h2 class="h2"><?php echo $taxonomy_name;?></h2>
         <?php endif ;?>
         <ul class="crew__list crew-list">
             <?php foreach($crew as $post) :?>
