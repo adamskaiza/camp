@@ -1,4 +1,4 @@
-<?php $partners = $args['partners'];?>
+<?php $partners = $args['partners'] ?? array(); ?>
 <section id="partnerzy" class="partners">
     <article class="partners__content container">
         <h2 class="h2">Partnerzy</h2>
