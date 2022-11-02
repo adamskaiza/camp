@@ -1,4 +1,4 @@
-<section class="hexProgram container" id="hexProgram">
+<section class="hexProgram container" id="o-programie">
     <?php $data=get_field('hexprogram'); ?>
 
     <div class="hexProgram__title">

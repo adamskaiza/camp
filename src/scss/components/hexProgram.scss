@@ -1,6 +1,6 @@
 .hexProgram {
-    margin-top: 12rem;
-    
+    padding-top: 6rem;
+    margin-top: 6rem;    
     @include breakpoint(lg) {
         width: 500px;
     }
