@@ -7,42 +7,92 @@
 	&__list {
 		display: flex;
 		align-items: center;
-		list-style: none;
-		padding: 0;
-		margin: 0;
-		a {
-			display: inline-block;
-			padding: 0.5rem 1rem;
-			font: normal normal 600 14px/20px Montserrat;
-			color: $c-header-link;
-			text-transform: uppercase;
+		&:hover > li > a {
+			transition: 0.2s;
+			color: rgba(0, 0, 0, 0.5);
+		}
+		&:hover > li.aplikuj-button > a {
+			transition: 0.2s;
+			color: rgba(255, 255, 255, 0.5);
+		}
+		li {
+			padding: 1.5rem 0;
+			a {
+				display: inline-block;
+				padding: 0.5rem 1rem;
+				font: normal normal 400 14px/20px "Open Sans";
+				letter-spacing: 0.08rem;
+				color: $c-header-link;
+				text-transform: uppercase;
+			}
+			&:hover > a {
+				color: #bd1e2c;
+			}
 
-			&:hover {
-				color: $c-header-link-hover;
+			&.current-menu-item a {
+				position: relative;
+				&::after {
+					content: "";
+					position: absolute;
+					bottom: 0;
+					left: 1rem;
+					width: 2rem;
+					border-bottom: 5px solid black;
+				}
+			}
+			&.current-menu-item.menu-item-object-custom a {
+				position: static;
+				&::after {
+					display: none;
+				}
 			}
 		}
 
 		&--mobile {
-			margin-top: 100px;
+			// margin-top: 100px;
 			@include flex(center, center, column, 1rem);
 
-			.sub-menu {
-				a {
-					font: normal normal 900 32px Montserrat;
-					color: #fff;
-				}
-			}
 			a {
 				color: $c-header-link-mobile;
-				font: normal normal 900 32px Montserrat;
+				font: normal normal 900 32px "Open Sans";
+			}
+		}
+	}
+
+	.aplikuj-button {
+		padding: 1.5rem 2rem 2rem;
+		margin-bottom: -0.5rem;
+		-webkit-clip-path: polygon(100% 0, 75% 100%, 25% 100%, 0 0);
+		clip-path: polygon(100% 0, 75% 100%, 25% 100%, 0 0);
+		background-color: #bd1e2c;
+		z-index: 9;
+		&:hover a {
+			color: #fff !important;
+		}
+		a {
+			font-size: 20px;
+			font-weight: 700;
+			color: #fff;
+
+			&:hover {
+				color: #fff;
 			}
 		}
 	}
 
 	&__item {
 		&--desktop {
-			@include breakpoint(tablet) {
-				display: none;
+			li {
+				@include breakpoint(lg) {
+					display: none;
+				}
+			}
+			li:last-child {
+				animation: pulse 4s both infinite;
+
+				@include breakpoint(lg) {
+					display: flex;
+				}
 			}
 		}
 		&--mobile {
@@ -53,13 +103,43 @@
 			width: 100%;
 			height: 100%;
 			transform: translatey(-100%);
-			background-color: #d4a020;
-			// @include flex-center();
+			background-color: #fff;
+			background-image: url("/src/img/hexy_calosc.png");
+			background-repeat: no-repeat;
+			background-size: cover;
+			background-position: 0 0;
+			@include flex(center, center, null, null);
 		}
 	}
 }
+
+.hide {
+	display: none !important;
+}
+
 .active {
 	transform: translatey(0);
 	z-index: 2;
-	// transition: 0.2s;
+	transition: 0.2s;
+}
+
+@keyframes pulse {
+	0% {
+		-webkit-transform: scale3d(1, 1, 1);
+		transform: scale3d(1, 1, 1);
+	}
+
+	10% {
+		-webkit-transform: scale3d(1.05, 1.05, 1.05);
+		transform: scale3d(1.05, 1.05, 1.05);
+	}
+
+	30% {
+		-webkit-transform: scale3d(1, 1, 1);
+		transform: scale3d(1, 1, 1);
+	}
+	100% {
+		-webkit-transform: scale3d(1, 1, 1);
+		transform: scale3d(1, 1, 1);
+	}
 }

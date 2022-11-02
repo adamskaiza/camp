@@ -2,6 +2,8 @@
 @import "./mixins";
 @import "./typography";
 
+@import "./global";
+
 //Required Core Stylesheet
 @import "node_modules/@glidejs/glide/src/assets/sass/glide.core";
 //Optional Theme Stylesheet
@@ -16,105 +18,25 @@
 
 @import "./footer/footer-bottom.scss";
 @import "./footer/footer.scss";
-@import "./footer/footer-nav.scss";
 
-@import "./components/socials.scss";
-@import "./components/main-hero.scss";
-@import "./components/hero-slider.scss";
-@import "./components/offer-intro.scss";
-@import "./components/site-button.scss";
-@import "./components/whyus.scss";
-@import "./components/blog-prev.scss";
-@import "./components/posts-grid.scss";
-@import "./components/careers.scss";
-@import "./components/references.scss";
-@import "./components/subpage-hero.scss";
-@import "./components/gut-content.scss";
-@import "./components/post-block.scss";
-@import "./components/cp-block.scss";
-@import "./components/praca-block.scss";
-@import "./components/desc.scss";
-@import "./components/contacts.scss";
-@import "./components/work.scss";
-@import "./components/form-modal.scss";
-
-@import "./pages-global/blog-page.scss";
 @import "./pages-global/archive-page.scss";
-@import "./pages-global/archive-praca.scss";
-@import "./pages-global/contact-page.scss";
+@import "./pages-global/single-page.scss";
 
-* {
-	margin: 0;
-	padding: 0;
-	box-sizing: border-box;
-}
+@import "./components/post-block.scss";
 
-html {
-	scroll-behavior: smooth;
-}
+@import "./components/contacts.scss";
 
-// main {
-// 	margin-top: 96px;
-// }
-
-ul,
-ol {
-	list-style: none;
-	margin: 0;
-	padding: 0;
-}
-
-a {
-	color: unset;
-	text-decoration: none;
-
-	&:hover {
-		color: unset;
-		text-decoration: none;
-	}
-	&:visited {
-		color: unset;
-		text-decoration: none;
-	}
-}
-
-.container {
-	width: 100%;
-	max-width: 1240px;
-	margin: 0 auto;
-	padding: 0 1rem;
-	// @include breakpoint(small) {
-	// 	padding: 1rem;
-	// }
-}
-
-.h2 {
-	margin-bottom: 2rem;
-	font: normal normal normal 32px/21px PT Sans;
-
-	&--left {
-		text-align: left;
-	}
-
-	&--m-1 {
-		margin-bottom: 1rem;
-	}
-
-	&--light {
-		color: #fff;
-	}
-}
-
-h1.h2 {
-	margin-bottom: 2.5rem;
-}
-
-.separator {
-	width: 100%;
-	height: 2px;
-	background-color: #16ade1;
-	&--col {
-		width: 2px;
-		height: 100%;
-	}
-}
+@import "./components/homeVideo";
+@import "./components/homeBgBlue";
+@import "./components/idea";
+@import "./components/hexNumbers";
+@import "./components/hexProgram";
+@import "./components/crew.scss";
+@import "./components/crew-list.scss";
+@import "./components/partners.scss";
+@import "./components/feedback.scss";
+@import "./components/feedback-slider.scss";
+@import "./components/tabs.scss";
+@import "./components/program-tabs.scss";
+@import "./components/acc.scss";
+@import "./components/program-component.scss";

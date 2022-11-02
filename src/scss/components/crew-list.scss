@@ -1,0 +1,23 @@
+.crew-list {
+	@include grid(repeat(4, 1fr), null, 2rem);
+	text-align: center;
+	@include breakpoint(sm) {
+		grid-template-columns: 1fr 1fr;
+	}
+
+	&__item {
+		h3 {
+			text-transform: uppercase;
+			font-weight: 700;
+		}
+		p {
+			font-weight: 500;
+		}
+		img {
+			width: 100%;
+			border-radius: 50%;
+			aspect-ratio: 1;
+			object-fit: cover;
+		}
+	}
+}

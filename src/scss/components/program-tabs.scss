@@ -1,0 +1,56 @@
+.program-tabs {
+	&__header {
+		@include flex(center, center, row, 2rem);
+		h1.h2 {
+			margin: 0;
+		}
+	}
+
+	&__nav {
+		ul {
+			@include flex(center, center, row, 1rem);
+
+			li {
+				button {
+					text-transform: uppercase;
+					font-size: 20px;
+					font-weight: 700;
+					border-radius: 0;
+					border: none;
+				}
+				&:nth-child(4n + 1) {
+					button {
+						background-color: #4fe6b9;
+					}
+				}
+				&:nth-child(4n + 2) {
+					button {
+						background-color: #d4e74f;
+					}
+				}
+				&:nth-child(4n + 3) {
+					button {
+						background-color: #ff8200;
+					}
+				}
+				&:nth-child(4n + 4) {
+					button {
+						background-color: #ffc100;
+					}
+				}
+			}
+		}
+	}
+
+	&__content {
+		background-repeat: no-repeat;
+		background-size: 100%;
+		background-position: center center;
+	}
+
+	&__line {
+		background-size: contain;
+		background-repeat: no-repeat;
+		background-position: center center;
+	}
+}

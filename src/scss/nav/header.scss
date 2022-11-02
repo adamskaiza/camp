@@ -1,42 +1,18 @@
 .header {
-	background-color: #fff;
-	padding: 1rem 0;
-
-	// position: absolute;
+	position: fixed;
+	top: 0;
+	left: 0;
 	width: 100%;
-	background-color: rgba(255, 255, 255, 0);
-	z-index: 1;
-
-	.nav__list {
-		&:hover > li > a {
-			color: rgba(255, 255, 255, 0.5);
-		}
-		a {
-			font: normal normal 600 14px/20px Cabin;
-			color: hotpink;
-		}
-
-		li {
-			a {
-				color: hotpink;
-			}
-			&:hover > a {
-				color: hotpink;
-			}
-		}
-
-		&--mobile {
-			a {
-				color: #fff;
-				font: normal normal 900 24px Cabin;
-			}
-		}
-	}
+	margin-bottom: 84px;
+	background-color: #fff;
+	z-index: 999;
+}
+.custom-logo {
+	max-width: 80px;
+	object-fit: contain;
 }
 
-.custom-logo {
-	@include breakpoint(small) {
-		max-width: 220px;
-		object-fit: contain;
-	}
+.site-branding {
+	position: relative;
+	z-index: 999;
 }

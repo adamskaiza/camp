@@ -1,0 +1,19 @@
+.feedback {
+	padding: 3rem 0;
+
+	&__grid {
+		@include grid(65% 32%, null, 2rem);
+		align-items: center;
+		justify-items: center;
+		@include breakpoint(md) {
+			grid-template-columns: 100%;
+			img {
+				order: -1;
+			}
+		}
+
+		img {
+			max-width: 350px;
+		}
+	}
+}

@@ -1,11 +1,9 @@
 import burger from "./parts/burger";
-import herosSlider from "./parts/hero-slider";
-import offerObserver from "./parts/offer-observer";
-import jobsFormModal from "./parts/form-modal";
+import feedbackSlider from "./parts/feedback-slider";
+import tabs from "./parts/tabs";
 
 document.addEventListener("DOMContentLoaded", () => {
 	burger();
-	herosSlider();
-	offerObserver();
-	jobsFormModal();
+	feedbackSlider();
+	tabs();
 });

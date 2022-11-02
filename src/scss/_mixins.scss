@@ -1,52 +1,42 @@
 //media queries breakpoints
 @mixin breakpoint($point) {
-	@if $point==x-large {
+	@if $point==xxl {
 		@media (max-width: 1680px) {
 			@content;
 		}
 	}
-	@if $point==large {
-		@media (max-width: 1439px) {
-			@content;
-		}
-	}
-
-	@if $point==laptop {
-		@media (max-width: 1366px) {
-			@content;
-		}
-	}
-
-	@if $point==m-large {
+	@if $point==xl {
 		@media (max-width: 1200px) {
 			@content;
 		}
-	} @else if $point==medium {
-		@media (max-width: 1040px) {
-			@content;
-		}
-	} @else if $point==tablet {
+	}
+	@if $point==lg {
 		@media (max-width: 992px) {
 			@content;
 		}
-	} @else if $point==mintablet {
-		@media (max-width: 840px) {
-			@content;
-		}
-	} @else if $point==small {
+	}
+	@if $point==md {
 		@media (max-width: 768px) {
 			@content;
 		}
-	} @else if $point==xs {
-		@media (max-width: 560px) {
+	}
+	@if $point==sm {
+		@media (max-width: 576px) {
 			@content;
 		}
-	} @else if $point==xxs {
+	}
+	@if $point==ms {
+		@media (max-width: 500px) {
+			@content;
+		}
+	}
+	@if $point==xs {
 		@media (max-width: 360px) {
 			@content;
 		}
 	}
 }
+
 
 @mixin flex($justify, $align, $direction, $gap) {
 	display: flex;

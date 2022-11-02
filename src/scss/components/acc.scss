@@ -1,0 +1,79 @@
+$background: #7afed7;
+$border: #e5d6c1;
+
+$text: #000;
+.acc-block {
+	width: 100%;
+}
+.acc {
+	width: 100%;
+	&__container {
+		overflow: hidden;
+		@include flex(flex-start, flex-start, column, 1rem);
+	}
+
+	&__cart {
+		width: 100%;
+		color: $text;
+		overflow: hidden;
+		border: 1px solid $border;
+	}
+
+	&__cart-label {
+		@include flex(space-between, null, null, null);
+		padding: 2em;
+		background: $background;
+		font-weight: bold;
+		cursor: pointer;
+		/* Icon */
+		&:hover {
+			background: darken($background, 10%);
+		}
+		&::after {
+			// content: url("/src/img/arrow-down.svg");
+			width: 1em;
+			height: 1em;
+			text-align: center;
+			transition: all 0.35s;
+		}
+	}
+
+	&__cart-content {
+		max-height: 0;
+		padding: 0 2em;
+		color: transparent;
+		background: $background;
+		transition: all 0.35s;
+		& > p {
+			margin-bottom: 0;
+			padding: 1rem;
+		}
+
+		& ul {
+			margin-bottom: 1rem;
+			padding-left: 1rem;
+		}
+
+		img {
+			max-width: 100%;
+			height: auto;
+		}
+	}
+
+	input {
+		display: none;
+	}
+	input:checked {
+		+ .acc__cart-label {
+			// background: darken($background, 10%);
+			&::after {
+				transform: rotate(180deg);
+			}
+		}
+		~ .acc__cart-content {
+			max-height: 200vh;
+			padding: 0 2em;
+			color: $text;
+		}
+	}
+}

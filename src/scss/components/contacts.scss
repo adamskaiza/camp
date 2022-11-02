@@ -1,40 +1,193 @@
 .contacts {
+	padding: 4rem 0;
+
 	background-color: #fff;
-	&.container {
-		padding: 3rem 2rem;
+	background-image: url("/src/img/hexy_calosc.png");
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: 20% 20%;
+	@include breakpoint(sm) {
+		background-size: auto;
 	}
 
 	&__list {
-		@include grid(repeat(4, 1fr), null, 3rem);
+		@include grid(repeat(3, 1fr), null, 0);
 		place-content: center;
 		align-items: baseline;
 		justify-content: center;
-		@include breakpoint(small) {
+		@include breakpoint(md) {
 			grid-template-columns: 1fr 1fr;
 		}
-		@include breakpoint(xs) {
+		@include breakpoint(sm) {
 			grid-template-columns: 1fr;
 		}
 
 		li {
 			@include flex(center, center, column, null);
+			position: relative;
+			aspect-ratio: 1.154718996128688;
+			margin: 0.5rem 0;
+
+			& > * {
+				z-index: 2;
+			}
 			img {
-				margin-bottom: 1rem;
-				width: 72px;
-				height: 72px;
+				position: absolute;
+				width: 170px;
+				top: 0;
 				border-radius: 50%;
 				object-fit: cover;
 				object-position: center;
+				border: 4px solid #fff;
+				@include breakpoint(lg) {
+					width: unset;
+				}
 			}
-			h4 {
+			&::after,
+			&::before {
+				position: absolute;
+				top: 0;
+				left: 0;
+				content: "";
+				clip-path: polygon(25% 0, 75% 0, 100% 50%, 75% 100%, 25% 100%, 0 50%);
+			}
+
+			&::before {
+				width: 100%;
+				height: 100%;
+				background-color: #fff;
+				z-index: 0;
+			}
+			&::after {
+				width: 100%;
+				height: 100%;
+				background-color: #fff;
+				transform: scale(0.98);
+
+				z-index: 1;
+			}
+
+			&:nth-child(1) {
+				img {
+					right: 0;
+					transform: translate(-50%, -50%);
+					@include breakpoint(lg) {
+						transform: translate(-50%, -55%);
+					}
+				}
+				&::after {
+					background-color: #eccd1e;
+				}
+			}
+			&:nth-child(2) {
+				img {
+					left: 0;
+					transform: translate(50%, -50%);
+					z-index: 4;
+					@include breakpoint(lg) {
+						transform: translate(50%, -55%);
+					}
+				}
+				&::after {
+					background-color: #fde0c5;
+				}
+			}
+			&:nth-child(3) {
+				@include breakpoint(sm) {
+					z-index: 5;
+				}
+				img {
+					right: 0;
+					transform: translate(-50%, -35%);
+					@include breakpoint(lg) {
+						transform: translate(-50%, -55%);
+					}
+				}
+				&::after {
+					background-color: #d7e688;
+				}
+			}
+			&:nth-child(4) {
+				@include breakpoint(md) {
+					z-index: 6;
+				}
+
+				img {
+					left: 0;
+					transform: translate(30%, -35%);
+					@include breakpoint(lg) {
+						transform: translate(0%, -55%);
+					}
+					@include breakpoint(lg) {
+						transform: translate(50%, -55%);
+					}
+				}
+				&::after {
+					background-color: #b7ce36;
+				}
+			}
+			&:nth-child(3n + 2) {
+				transform: translateY(52%);
+				margin-right: -2rem;
+				margin-left: -2rem;
+				z-index: 5;
+				@include breakpoint(lg) {
+					margin-right: -1.25rem;
+					margin-left: -1.25rem;
+				}
+				@include breakpoint(md) {
+					margin-right: unset;
+					margin-left: unset;
+					transform: translateY(52%) translateX(-30px);
+				}
+				@include breakpoint(sm) {
+					transform: translateY(0%) translateX(0);
+				}
+			}
+			&:nth-child(3n + 1) {
+				margin-right: -4rem;
+				@include breakpoint(lg) {
+					margin-right: -3rem;
+				}
+				@include breakpoint(md) {
+					margin-right: unset;
+					transform: translateX(30px);
+				}
+				@include breakpoint(sm) {
+					transform: translateX(0);
+				}
+			}
+			&:nth-child(3n + 3) {
+				margin-left: -4rem;
+				@include breakpoint(lg) {
+					margin-left: -3rem;
+				}
+				@include breakpoint(md) {
+					margin-right: unset;
+					margin-left: unset;
+					transform: translateX(30px);
+				}
+				@include breakpoint(sm) {
+					transform: translateX(0);
+				}
+			}
+			&:nth-child(4n) {
+				@include breakpoint(md) {
+					transform: translateY(52%) translateX(-30px);
+				}
+				@include breakpoint(sm) {
+					transform: translateY(0%) translateX(0);
+				}
+			}
+
+			h3 {
 				margin-bottom: 1rem;
-				font: normal normal 600 16px/25px Poppins;
-				color: #16ade1;
 			}
-			a {
-				margin-bottom: 0.25rem;
-				font: normal normal normal 14px/25px Poppins;
-				color: #6a7684;
+
+			p {
+				&:last-of-type {
+					margin-bottom: 0;
+				}
 			}
 		}
 	}

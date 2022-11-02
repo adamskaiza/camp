@@ -1,4 +1,5 @@
 .footer {
+	// padding: 3rem 0;
 	&__logo {
 		padding: 8rem;
 		text-align: center;
@@ -19,29 +20,6 @@
 			font: normal normal normal 16px/17px PT Sans;
 			color: #3b3b3b;
 			@include flex(center, center, row, 1.5rem);
-		}
-	}
-
-	&__up {
-		height: 100%;
-		position: absolute;
-		top: 0;
-		left: 50%;
-		transform: translate(-50%, 0);
-		@include flex(center, center, column, 4rem);
-
-		svg {
-			height: 64px;
-		}
-		a {
-			font: normal normal normal 15px/19px PT Sans;
-			color: #3a5b9c;
-			background-color: #fff;
-			transform: rotate(-90deg);
-		}
-
-		.separator {
-			max-height: 164px;
 		}
 	}
 }

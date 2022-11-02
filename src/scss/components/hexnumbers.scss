@@ -1,0 +1,88 @@
+.hexNumbers {
+    color: white;
+    
+    display: flex;
+    aspect-ratio: 3/1;
+
+    margin-top: 15%;
+    box-sizing: border-box;
+
+    @include breakpoint(md) {
+        flex-direction: column;
+    }
+
+    &__tile {
+        background: url(/src/img/hex_5.svg);
+        background-repeat: no-repeat;
+        background-size: contain;
+        
+        flex: 1;
+
+        box-sizing: border-box;
+        padding: 5%;
+        text-align: center;
+
+        @include breakpoint(md) {
+            flex: 0 0 250px;
+            width: 250px;
+            aspect-ratio: 1/1;
+        }
+        &:nth-child(2) {
+            margin: -15% -8% 0; 
+            @include breakpoint(md) {
+                margin: 0;
+            }
+        }
+
+
+        &:nth-child(1) & {
+            &_number {
+                color: rgb(208, 232, 82);
+            }
+        }
+        &:nth-child(2) & {
+            &_number {
+                color: rgb(255, 193, 1);
+            }
+        }
+        &:nth-child(3) & {
+            &_number {
+                color: rgb(78, 227, 185);
+            }
+        }
+
+        &_number {
+            font-size: 5.5rem;
+            font-weight: 800;
+            @include breakpoint(lg) {
+                font-size: 3.5rem;
+            }
+        }
+        &_caption {
+            font-size: 1.4rem;
+            line-height: 1.5rem;
+            @include breakpoint(md) {
+                font-size: 1rem;
+            }
+        }
+
+        &--image {
+            margin-left: -27%;
+            img {
+                position: relative;
+                top: -60%;
+                @include breakpoint(lg) {
+                    transform: scale(.7);
+                    
+                }
+            }
+            
+            @include breakpoint(md) {
+                margin: 0;
+                img {
+                    top: 0;
+                }
+            }
+        }
+    }
+}
