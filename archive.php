@@ -16,9 +16,9 @@ get_header();
 
     <header class="archive-page__header">
         <div class="container">
-            <?php
-			post_type_archive_title( '<h1 class="page-title">', '</h1>')
-		?>
+            <h1 class="post-title">
+                <?php echo is_tax() ? get_queried_object()->name : post_type_archive_title();?>
+            </h1>
         </div>
     </header><!-- .page-header -->
     <section class="archive-page__content">
