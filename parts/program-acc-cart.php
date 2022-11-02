@@ -1,8 +1,7 @@
 <?php $acc_carts = $args['acc_cart'];
 $cartCount = 1;
 ?>
-
-<section class="acc">
+<section id="acc-<?php echo $id;?>" class="acc">
     <form class="acc__container">
         <?php foreach($acc_carts as $acc_cart):?>
 
@@ -16,6 +15,7 @@ $cartCount = 1;
         </section>
         <?php $cartCount++;?>
         <?php endforeach;?>
+        <?php $id++;?>
 
 
     </form>

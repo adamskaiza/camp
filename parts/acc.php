@@ -2,7 +2,8 @@
 
 <section class="acc-block">
 
-    <section class="acc">
+    <?php $id = $args['id'];?>
+    <section id="<?php echo $id;?>" class="acc">
         <form class="acc__container">
             <h2 class="acc__heading"><?php echo $acc_heading;?> </h2>
             <?php if( have_rows('acc_cart') ):?>
