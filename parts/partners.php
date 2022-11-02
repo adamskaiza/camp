@@ -3,6 +3,7 @@
     <article class="partners__content container">
         <h2 class="h2">Partnerzy</h2>
         <ul class="partners__list">
+            <?php if($partners):?>
             <?php foreach($partners as $partner): ?>
             <li class="partners__item">
                 <a href="<?php echo $partner['link'];?>" target="_blank">
@@ -10,6 +11,7 @@
                 </a>
             </li>
             <?php endforeach;?>
+            <?php endif;?>
         </ul>
 
     </article>

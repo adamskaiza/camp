@@ -31,24 +31,14 @@
 
 <?php get_template_part('parts/feedback-slider');?>
 
-<?php $role_models = get_the_terms($wyprawa->ID, 'rodzaje_wyprawy'); ?>
-
 <?php get_template_part('parts/crew-list', null, [
     'post_type' => 'prelegenci',
-    'taxonomy' => 'role-models',
-    'heading' => 'role models'
 ]);?>
 <?php get_template_part('parts/crew-list', null, [
-    'post_type' => 'prelegenci',
-    'taxonomy' => 'mentorzy',
-    'heading' => 'mentorzy'
-
+    'post_type' => 'mentorzy',
 ]);?>
 <?php get_template_part('parts/crew-list', null, [
-    'post_type' => 'prelegenci',
-    'taxonomy' => 'trenerzy',
-    'heading' => 'trenerzy'
-
+    'post_type' => 'trenerzy',
 ]);?>
 
 <?php $partners_arr = get_field('logotypes');?>
