@@ -54,11 +54,10 @@
         }
 
         &--image {
+            margin-left: -27%;
             img {
                 position: relative;
-                left: -120%;
-                top: -40%;
-                transform: scale(2);
+                top: -60%;
                 @include breakpoint(lg) {
                     transform: scale(1.5);
                     left: -100%;
