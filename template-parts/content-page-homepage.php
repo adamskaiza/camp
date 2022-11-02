@@ -32,13 +32,13 @@
 <?php get_template_part('parts/feedback-slider');?>
 
 <?php get_template_part('parts/crew-list', null, [
-    'post_type' => 'prelegenci',
+    'post_type' => 'osoby',
 ]);?>
 <?php get_template_part('parts/crew-list', null, [
-    'post_type' => 'mentorzy',
+    'post_type' => 'osoby',
 ]);?>
 <?php get_template_part('parts/crew-list', null, [
-    'post_type' => 'trenerzy',
+    'post_type' => 'osoby',
 ]);?>
 
 <?php $partners_arr = get_field('logotypes');?>
