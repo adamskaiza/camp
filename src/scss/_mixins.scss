@@ -20,6 +20,11 @@
 			@content;
 		}
 	}
+	@if $point==md-s {
+		@media (max-width: 710px) {
+			@content;
+		}
+	}
 	@if $point==sm {
 		@media (max-width: 576px) {
 			@content;
@@ -36,7 +41,6 @@
 		}
 	}
 }
-
 
 @mixin flex($justify, $align, $direction, $gap) {
 	display: flex;
