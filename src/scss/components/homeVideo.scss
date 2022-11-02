@@ -7,8 +7,6 @@
 	box-sizing: border-box;
 	overflow: hidden;
 	position: relative;
-	.iframe-container {
-=======
 	.video-container {
 		filter: brightness(50%);
 		position: relative;
@@ -17,9 +15,9 @@
 		height: 0;
 		pointer-events: none;
 
-		iframe {
-		// pointer-events: none;
-
+		// iframe {
+		// 	// pointer-events: none;
+		// }
 		video {
 			position: absolute;
 			top: 0;
