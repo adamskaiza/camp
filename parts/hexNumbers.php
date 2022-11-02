@@ -16,7 +16,7 @@
     <?php endforeach; ?>
 
     <div class="hexNumbers__tile--image">
-        <?php echo wp_get_attachment_image($data['image']); ?>
+        <?php echo wp_get_attachment_image($data['image'], 'full'); ?>
     </div>
 
 </section>

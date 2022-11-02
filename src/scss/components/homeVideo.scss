@@ -8,6 +8,8 @@
 	overflow: hidden;
 	position: relative;
 	.iframe-container {
+=======
+	.video-container {
 		filter: brightness(50%);
 		position: relative;
 		width: 100%;
@@ -16,6 +18,9 @@
 		pointer-events: none;
 
 		iframe {
+		// pointer-events: none;
+
+		video {
 			position: absolute;
 			top: 0;
 			left: 0;
