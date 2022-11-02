@@ -27,6 +27,7 @@
 			position: relative;
 			aspect-ratio: 1.154718996128688;
 			margin: 0.5rem 0;
+			padding: 2rem;
 			@include breakpoint(md-s) {
 				width: 100%;
 				max-width: 535px;
@@ -35,18 +36,8 @@
 			& > * {
 				z-index: 2;
 			}
-			& > p,
-			& > a {
-				max-width: 50%;
-				text-align: center;
-			}
-			& > a {
-				display: block;
-				overflow-wrap: break-word;
-			}
 
 			& > h3 {
-				max-width: 70%;
 				text-align: center;
 				line-height: 1;
 			}
