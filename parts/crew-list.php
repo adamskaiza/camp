@@ -2,6 +2,8 @@
 $post_args = array(
   'numberposts' => 12,
   'post_type'   => $args['post_type'],
+  'orderby' => 'rand',
+
   'tax_query' => array(
     array(
         'taxonomy' => 'role',
