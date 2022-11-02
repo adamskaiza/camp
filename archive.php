@@ -33,8 +33,7 @@ get_header();
 	endwhile; ?>
         </ul>
 
-        <?php the_posts_navigation();
-
+        <?php
 else :
 
 	get_template_part( 'template-parts/content', 'none' );

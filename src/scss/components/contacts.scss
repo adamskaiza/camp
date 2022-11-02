@@ -6,7 +6,7 @@
 	background-repeat: no-repeat;
 	background-size: cover;
 	background-position: 20% 20%;
-	@include breakpoint(sm) {
+	@include breakpoint(md-s) {
 		background-size: auto;
 	}
 
@@ -14,12 +14,12 @@
 		@include grid(repeat(3, 1fr), null, 0);
 		place-content: center;
 		align-items: baseline;
-		justify-content: center;
 		@include breakpoint(md) {
 			grid-template-columns: 1fr 1fr;
 		}
-		@include breakpoint(sm) {
+		@include breakpoint(md-s) {
 			grid-template-columns: 1fr;
+			justify-items: center;
 		}
 
 		li {
@@ -27,9 +27,19 @@
 			position: relative;
 			aspect-ratio: 1.154718996128688;
 			margin: 0.5rem 0;
+			padding: 2rem;
+			@include breakpoint(md-s) {
+				width: 100%;
+				max-width: 535px;
+			}
 
 			& > * {
 				z-index: 2;
+			}
+
+			& > h3 {
+				text-align: center;
+				line-height: 1;
 			}
 			img {
 				position: absolute;
@@ -39,8 +49,12 @@
 				object-fit: cover;
 				object-position: center;
 				border: 4px solid #fff;
+				aspect-ratio: 1;
 				@include breakpoint(lg) {
-					width: unset;
+					width: 140px;
+				}
+				@include breakpoint(md-s) {
+					width: 170px;
 				}
 			}
 			&::after,
@@ -72,7 +86,7 @@
 					right: 0;
 					transform: translate(-50%, -50%);
 					@include breakpoint(lg) {
-						transform: translate(-50%, -55%);
+						transform: translate(-50%, -65%);
 					}
 				}
 				&::after {
@@ -85,7 +99,7 @@
 					transform: translate(50%, -50%);
 					z-index: 4;
 					@include breakpoint(lg) {
-						transform: translate(50%, -55%);
+						transform: translate(50%, -65%);
 					}
 				}
 				&::after {
@@ -93,14 +107,14 @@
 				}
 			}
 			&:nth-child(3) {
-				@include breakpoint(sm) {
+				@include breakpoint(md-s) {
 					z-index: 5;
 				}
 				img {
 					right: 0;
-					transform: translate(-50%, -35%);
+					transform: translate(-50%, -45%);
 					@include breakpoint(lg) {
-						transform: translate(-50%, -55%);
+						transform: translate(-50%, -65%);
 					}
 				}
 				&::after {
@@ -114,11 +128,11 @@
 
 				img {
 					left: 0;
-					transform: translate(30%, -35%);
+					transform: translate(30%, -45%);
 					@include breakpoint(lg) {
-						transform: translate(0%, -55%);
+						transform: translate(0%, -65%);
 					}
-					@include breakpoint(lg) {
+					@include breakpoint(md) {
 						transform: translate(50%, -55%);
 					}
 				}
@@ -140,7 +154,7 @@
 					margin-left: unset;
 					transform: translateY(52%) translateX(-30px);
 				}
-				@include breakpoint(sm) {
+				@include breakpoint(md-s) {
 					transform: translateY(0%) translateX(0);
 				}
 			}
@@ -153,7 +167,7 @@
 					margin-right: unset;
 					transform: translateX(30px);
 				}
-				@include breakpoint(sm) {
+				@include breakpoint(md-s) {
 					transform: translateX(0);
 				}
 			}
@@ -167,7 +181,7 @@
 					margin-left: unset;
 					transform: translateX(30px);
 				}
-				@include breakpoint(sm) {
+				@include breakpoint(md-s) {
 					transform: translateX(0);
 				}
 			}
@@ -175,7 +189,7 @@
 				@include breakpoint(md) {
 					transform: translateY(52%) translateX(-30px);
 				}
-				@include breakpoint(sm) {
+				@include breakpoint(md-s) {
 					transform: translateY(0%) translateX(0);
 				}
 			}

@@ -1,6 +1,9 @@
 <section class="homeVideo" id="homeVideo">
     <?php /* ?>
     <div class="video-container">
+        <video muted autoplay="autoplay" loop>
+            <source src="https://perspektywy.org/womenintechcamp/wp-content/uploads/Women-in-Tech-Camp-2021_2.mp4" type="video/mp4">
+        </video>
         <video autoplay loop muted playsinline onloadeddata="this.muted=true;this.play();">
             <source src="https://perspektywy.org/womenintechcamp/wp-content/uploads/Women-in-Tech-Camp-2021_2.mp4" type="video/mp4">
         </video>
