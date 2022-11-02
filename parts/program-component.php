@@ -14,7 +14,6 @@
     'acc_cart' => $content['acc_cart'],
    ])
    ?>
-    <?php echo $i;?>
     <?php endif;?>
     <?php endforeach;?>
 
