@@ -29,7 +29,7 @@
         <?php wp_head(); ?>
     </head>
 
-    <body>
+    <body class="<?php echo is_front_page() ? 'mt-0' : '' ;?>">
         <?php wp_body_open(); ?>
         <div id="page" class="site">
             <a class="skip-link screen-reader-text"

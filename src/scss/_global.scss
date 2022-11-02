@@ -44,6 +44,16 @@ a {
 	}
 }
 
+.mt-0 {
+	margin-top: 0;
+}
+
+body.mt-0 {
+	@include breakpoint(md) {
+		margin-top: 84px;
+	}
+}
+
 .h2 {
 	margin-bottom: 6rem;
 	color: #2973a5;
