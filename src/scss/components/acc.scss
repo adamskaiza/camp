@@ -1,4 +1,7 @@
-$background: #7afed7;
+$background: #ddd;
+$background--2: #d4e74f;
+$background--3: #fe8301;
+$background--4: #ffc000;
 $border: #e5d6c1;
 
 $text: #000;
@@ -16,12 +19,11 @@ $text: #000;
 		width: 100%;
 		color: $text;
 		overflow: hidden;
-		border: 1px solid $border;
 	}
 
 	&__cart-label {
 		@include flex(space-between, null, null, null);
-		padding: 2em;
+		padding: 1.5em;
 		background: $background;
 		font-weight: bold;
 		cursor: pointer;

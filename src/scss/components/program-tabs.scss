@@ -1,3 +1,7 @@
+$background: #7afed7;
+$background--2: #d4e74f;
+$background--3: #fe8301;
+$background--4: #ffc000;
 .program-tabs {
 	&__header {
 		@include flex(center, center, row, 2rem);
@@ -15,6 +19,11 @@
 			grid-auto-columns: 1fr;
 			grid-auto-flow: column;
 			grid-gap: 1rem;
+			@include breakpoint(sm) {
+				grid-template-columns: 1fr 1fr;
+				grid-auto-columns: unset;
+				grid-auto-flow: unset;
+			}
 			li {
 				button {
 					text-transform: uppercase;
@@ -53,10 +62,45 @@
 		background-position: center center;
 		background-attachment: fixed;
 
-		& > img {
-			min-height: 355px;
-			object-fit: cover;
-			object-position: 92% 100%;
+		&--1 {
+			.acc__cart-content {
+				background-color: $background;
+			}
+			input:checked {
+				+ .acc__cart-label {
+					background: darken($background, 10%);
+				}
+			}
+		}
+		&--2 {
+			.acc__cart-content {
+				background-color: $background--2;
+			}
+			input:checked {
+				+ .acc__cart-label {
+					background: darken($background--2, 10%);
+				}
+			}
+		}
+		&--3 {
+			.acc__cart-content {
+				background-color: $background--3;
+			}
+			input:checked {
+				+ .acc__cart-label {
+					background: darken($background--3, 10%);
+				}
+			}
+		}
+		&--4 {
+			.acc__cart-content {
+				background-color: $background--4;
+			}
+			input:checked {
+				+ .acc__cart-label {
+					background: darken($background--4, 10%);
+				}
+			}
 		}
 	}
 
@@ -67,6 +111,56 @@
 	&__line {
 		background-size: contain;
 		background-repeat: no-repeat;
-		background-position: center center;
+		background-position: 50% 90%;
+		background-attachment: fixed;
+
+		@include breakpoint(lg) {
+			background-size: auto;
+			background-position: unset;
+		}
+	}
+
+	&__banner {
+		position: relative;
+		& > img {
+			min-height: 355px;
+			object-fit: cover;
+			object-position: 92% 100%;
+		}
+	}
+
+	&__title {
+		position: absolute;
+		width: 100%;
+		max-width: 1240px;
+		margin: 0 auto;
+		padding: 0 1rem;
+		bottom: 6rem;
+		left: 52%;
+		transform: translate(-50%, -50%);
+		color: #fff;
+		font-size: 4rem;
+		font-weight: 900;
+		@include breakpoint(sm) {
+			font-size: 3rem;
+		}
+
+		+ h2 {
+			position: absolute;
+			width: 100%;
+			max-width: 1240px;
+			margin: 0 auto;
+			padding: 0 1rem;
+			bottom: 1rem;
+			left: 52%;
+			transform: translate(-50%, -50%);
+			color: #000;
+			font-size: 2rem;
+			font-weight: 900;
+
+			@include breakpoint(lg) {
+				bottom: 1.6rem;
+			}
+		}
 	}
 }

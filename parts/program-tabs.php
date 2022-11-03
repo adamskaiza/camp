@@ -20,14 +20,19 @@
         <?php $tab_content_counter = 1;?>
         <?php foreach ($program as $item) : ?>
         <article data-display="<?php echo $item['heading'];?>"
-            class="program-tabs__content  tabs-content <?php echo $tab_content_counter === 1 ? 'tabs-content--visible' : '';?>">
-            <img src="<?php echo get_stylesheet_directory_uri() . '/src/img/dzien' . $tab_content_counter . '.jpg';?>"
-                alt="Baner tabu">
+            class="program-tabs__content program-tabs__content--<?php echo $tab_content_counter;?>  tabs-content <?php echo $tab_content_counter === 1 ? 'tabs-content--visible' : '';?>">
+            <article class="program-tabs__banner">
+                <img src="<?php echo get_stylesheet_directory_uri() . '/src/img/dzien' . $tab_content_counter . '.jpg';?>"
+                    alt="Baner tabu">
+                <h1 class="program-tabs__title">
+                    <?php echo $item['title'];?>
+                </h1>
+                <h2>Dzień <?php echo $tab_content_counter;?>.</h2>
+            </article>
             <article class="program-tabs__line"
                 style="background-image: url(<?php echo get_stylesheet_directory_uri() . '/src/img/hex_dzien_' . $tab_content_counter . '.png';?>)">
                 <div class="program-tabs__line-wrapper container">
-                    <?php echo $item['title'];?>
-                    <p>Dzień <?php echo $tab_content_counter;?></p>
+
                     <section class="program__program program">
                         <?php if($item['components']): ?>
                         <?php foreach ($item['components'] as $program_component): ?>

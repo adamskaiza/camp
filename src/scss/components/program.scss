@@ -1,3 +1,5 @@
 .program {
 	@include flex(null, null, column, 1rem);
+	margin-top: 2rem;
+	padding: 2rem 0;
 }
