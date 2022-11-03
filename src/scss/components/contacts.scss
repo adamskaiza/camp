@@ -13,7 +13,7 @@
 	&__list {
 		@include grid(repeat(3, 1fr), null, 0);
 		place-content: center;
-		align-items: baseline;
+		// align-items: baseline;
 		@include breakpoint(md) {
 			grid-template-columns: 1fr 1fr;
 		}
