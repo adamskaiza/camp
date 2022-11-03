@@ -31,7 +31,7 @@
 		}
 	}
 	@if $point==ms {
-		@media (max-width: 500px) {
+		@media (max-width: 445px) {
 			@content;
 		}
 	}

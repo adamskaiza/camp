@@ -27,6 +27,12 @@
         @include breakpoint(lg) {
             flex-direction: column;
         }
+        @include breakpoint(sm) {
+            margin-left: -5%;
+        }
+        @include breakpoint(ms) {
+            margin-left: -10%;
+        }
 
         &_hex {
             background-size: contain;
