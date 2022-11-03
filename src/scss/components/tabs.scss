@@ -16,12 +16,12 @@
 .tabs-content {
 	position: absolute;
 	padding: 1.75em 0;
-	visibility: hidden;
+	display: none;
 	height: 0;
 
 	&--visible {
 		position: static;
-		visibility: visible;
+		display: block;
 		height: auto;
 	}
 }

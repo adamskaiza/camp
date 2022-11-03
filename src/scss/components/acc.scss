@@ -42,7 +42,7 @@ $text: #000;
 
 	&__cart-content {
 		max-height: 0;
-		padding: 0 2em;
+		// padding: 0 2em;
 		color: transparent;
 		background: $background;
 		transition: all 0.35s;
@@ -74,7 +74,7 @@ $text: #000;
 		}
 		~ .acc__cart-content {
 			max-height: 200vh;
-			padding: 0 2em;
+			// padding: 0 2em;
 			color: $text;
 		}
 	}
