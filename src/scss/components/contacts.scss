@@ -13,13 +13,16 @@
 	&__list {
 		@include grid(repeat(3, 1fr), null, 0);
 		place-content: center;
-		align-items: baseline;
+		// align-items: baseline;
 		@include breakpoint(md) {
 			grid-template-columns: 1fr 1fr;
 		}
 		@include breakpoint(md-s) {
 			grid-template-columns: 1fr;
 			justify-items: center;
+		}
+		@include breakpoint(ms) {
+			grid-gap: 1rem;
 		}
 
 		li {
@@ -55,6 +58,9 @@
 				}
 				@include breakpoint(md-s) {
 					width: 170px;
+				}
+				@include breakpoint(ms) {
+					width: 140px;
 				}
 			}
 			&::after,
@@ -133,7 +139,7 @@
 						transform: translate(0%, -65%);
 					}
 					@include breakpoint(md) {
-						transform: translate(50%, -55%);
+						transform: translate(50%, -65%);
 					}
 				}
 				&::after {
