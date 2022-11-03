@@ -1,0 +1,20 @@
+.roles-list {
+	@include flex(center, center, row, 1rem);
+	padding: 3rem 0 0;
+	@include breakpoint(xs) {
+		flex-wrap: wrap;
+	}
+	li {
+		padding: 1rem;
+		background-color: #bd1f2c;
+		@include breakpoint(ms) {
+			padding: 0.5rem;
+		}
+	}
+
+	a {
+		color: #fff;
+		font-weight: 600;
+		text-transform: uppercase;
+	}
+}

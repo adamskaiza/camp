@@ -12,6 +12,8 @@ get_header();
 
 <main id="primary" class="archive-page">
 
+
+
     <?php if ( have_posts() ) : ?>
 
     <header class="archive-page__header">
@@ -21,17 +23,42 @@ get_header();
             </h1>
         </div>
     </header><!-- .page-header -->
+
+    <?php $roles = get_terms( 'role' ); ?>
+
+    <ul class="roles-list container">
+
+        <?php foreach ( $roles as $role ) :?>
+
+        <?php $role_link = get_term_link( $role );?>
+
+        <?php if ( is_wp_error( $role_link ) ) : 
+            continue;
+        endif;?>
+        <li>
+            <a href="<?php echo esc_url( $role_link );?>"><?php echo $role->name;?></a>
+        </li>
+        <?php endforeach;?>
+
+    </ul>
     <section class="archive-page__content">
-        <ul class="crew-list container">
+        <?php get_template_part('parts/crew-list', null, [
+    'post_type' => 'prelegenci',
+    'taxonomy' => 'role-models',
+    'heading' => 'role models'
+]);?>
+        <?php get_template_part('parts/crew-list', null, [
+    'post_type' => 'prelegenci',
+    'taxonomy' => 'mentorzy',
+    'heading' => 'mentorzy'
 
-            <?php
-	while ( have_posts() ) :
-		the_post();
+]);?>
+        <?php get_template_part('parts/crew-list', null, [
+    'post_type' => 'prelegenci',
+    'taxonomy' => 'trenerzy',
+    'heading' => 'trenerzy'
 
-		get_template_part( 'template-parts/content', 'archive' );
-
-	endwhile; ?>
-        </ul>
+]);?>
 
         <?php
 else :
