@@ -11,7 +11,15 @@ $cartCount = 1;
             <label class="acc__cart-label"
                 for="<?php echo $id;?>-<?php echo $cartCount;?>"><?php echo $acc_cart['acc_title'];?></label>
             <article class="acc__cart-content">
-                <?php echo $acc_cart['acc_content'];?> </article>
+                <p>Level:
+                    <?php if($acc_cart['level']) :?>
+                    <?php foreach($acc_cart['level'] as $level) :?>
+                    <span><?php echo $level;?></span>
+                    <?php endforeach;?>
+                    <?php endif;?>
+                </p>
+                <?php echo $acc_cart['acc_content'];?>
+            </article>
         </section>
         <?php $cartCount++;?>
         <?php endforeach;?>
