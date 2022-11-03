@@ -36,19 +36,20 @@
 <?php get_template_part('parts/crew-list', null, [
     'post_type' => 'prelegenci',
     'taxonomy' => 'role-models',
-    'heading' => 'role models'
+    'heading' => 'role models',
+    'numberposts' => 8
 ]);?>
 <?php get_template_part('parts/crew-list', null, [
     'post_type' => 'prelegenci',
     'taxonomy' => 'mentorzy',
-    'heading' => 'mentorzy'
-
+    'heading' => 'mentorzy',
+    'numberposts' => 8
 ]);?>
 <?php get_template_part('parts/crew-list', null, [
     'post_type' => 'prelegenci',
     'taxonomy' => 'trenerzy',
-    'heading' => 'trenerzy'
-
+    'heading' => 'trenerzy',
+    'numberposts' => 8
 ]);?>
 
 <?php $partners_arr = get_field('logotypes');?>

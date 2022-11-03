@@ -10,12 +10,26 @@
 		@include breakpoint(ms) {
 			padding: 0.5rem;
 		}
+		&:nth-child(4n + 1) {
+			background-color: #4fe6b9;
+		}
+
+		&:nth-child(4n + 2) {
+			background-color: #d4e74f;
+		}
+
+		&:nth-child(4n + 3) {
+			background-color: #ff8200;
+		}
+
+		&:nth-child(4n + 4) {
+			background-color: #ffc100;
+		}
 	}
 
 	a {
 		padding: 1rem;
-
-		color: #fff;
+		color: #000;
 		font-weight: 600;
 		text-transform: uppercase;
 	}

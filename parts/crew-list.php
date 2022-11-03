@@ -1,6 +1,6 @@
 <?php
 $post_args = array(
-  'numberposts' => 12,
+  'numberposts' => $args['numberposts'] ?? null,
   'post_type'   => $args['post_type'],
   'orderby' => 'rand',
 
@@ -27,5 +27,10 @@ $crew = get_posts($post_args);
             <?php wp_reset_postdata(); ?>
             <?php endforeach;?>
         </ul>
+        <?php if(is_front_page())  :?>
+        <a href="<?php echo get_site_url() . '/role/' . $args['taxonomy'];?>" class="crew__link">zobacz
+            wszystkich</a>
+        <?php endif ;?>
+
     </section>
 </section>
