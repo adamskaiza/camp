@@ -9,6 +9,9 @@
         </video>
     </div>
 
+    <div class="homeVideo__gif">
+        <?php echo wp_get_attachment_image( $value['gif'], 'full') ?>
+    </div>
     <?php */ ?>
     <div class="iframe-container">
         <?php $videoId=get_field('homevideo')['videoid']; ?>

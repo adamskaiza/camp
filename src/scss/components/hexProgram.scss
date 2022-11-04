@@ -1,5 +1,10 @@
 .hexProgram {
-    margin-top: 6rem;
+    margin-top: 15rem;
+    margin-bottom: 5rem;
+    padding-top: 6rem;
+    @include breakpoint(lg) {
+        margin-top: 0;
+    }
     .container {
         width: fit-content;
         margin: 0 auto;
@@ -120,7 +125,6 @@
             
             @include breakpoint(lg) {
                 &:nth-child(n) {
-                    position: static;
                     margin-top: 0;
                     top: 0;
                     bottom: 0;
