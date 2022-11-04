@@ -13,7 +13,7 @@ $cartCount = 1;
             <article class="acc__cart-content">
 
                 <?php if($acc_cart['level']) :?>
-                <p>Level:
+                <p class="acc__level">Level:
                     <span><?php echo $acc_cart['level'];?></span>
                 </p>
                 <?php endif;?>
@@ -21,7 +21,7 @@ $cartCount = 1;
                 <?php echo $acc_cart['acc_content'];?>
 
                 <?php if($acc_cart['acc_speaker']) :?>
-                <p>Prowadzący:</p>
+                <p>Speaker:</p>
                 <ul class="acc__speaker">
                     <?php foreach($acc_cart['acc_speaker'] as $post) :?>
                     <?php setup_postdata( $post );?>
