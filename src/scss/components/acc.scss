@@ -26,6 +26,7 @@ $text: #000;
 		@include flex(space-between, null, null, null);
 		padding: 1.5em;
 		background: $background;
+		font-weight: 500;
 		cursor: pointer;
 		/* Icon */
 		&:hover {
