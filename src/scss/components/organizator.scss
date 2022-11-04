@@ -1,0 +1,38 @@
+.organizator {
+    display: flex;
+    margin-top: 5rem;
+
+    &__left {
+        flex: 0 0 50%;
+        box-sizing: border-box;
+
+        .h2 {
+            margin: 0 0 -6rem 18vw;
+        }
+    }
+
+    &__right {
+        flex: 0 0 50%;
+        box-sizing: border-box;
+        padding-right: 10%;
+        img {
+            max-width: 200px;
+            margin-bottom: 1rem;
+        }
+    }
+
+    @include breakpoint(lg) {
+        flex-direction: column;
+        &__left {
+            width: 60%;
+            min-width: 360px;
+            .h2 {
+                margin: 0 0 -2rem 0;
+                text-align: center;
+            }
+        }
+        &__right {
+            padding: 0 10% 10% 10%;
+        }
+    }
+}
