@@ -51,6 +51,8 @@
 
 ]);?>
 
+<?php get_template_part('parts/organizator'); ?>
+
 <?php $partners_arr = get_field('logotypes');?>
 <?php get_template_part('parts/partners', null, [
     'partners' => $partners_arr,
