@@ -1,8 +1,9 @@
 .hexProgram {
-    padding-top: 6rem;
-    margin-top: 6rem;    
-    @include breakpoint(lg) {
-        width: 500px;
+    margin-top: 6rem;
+    overflow-x: hidden;
+    .container {
+        width: fit-content;
+        margin: 0 auto;
     }
     &__title {
         font-size: 2rem;
@@ -41,7 +42,7 @@
             aspect-ratio: 1/1;
             min-width: 440px;
             position: relative;
-            padding: 10%;
+            padding: 9%;
             text-align: center;
             @include breakpoint(lg) {
                 flex-direction: column;
@@ -89,6 +90,9 @@
             &:nth-child(3) &--sideimage {
                 right: -35%;
                 bottom: -30%;
+                @include breakpoint(lg) {
+                    display: none;
+                }
             }
             &:nth-child(4) &--sideimage {
                 right: -20%;
@@ -106,6 +110,9 @@
             &:nth-child(4) { 
                 margin-top: -27%;
                 left: -6%;
+            }
+            .size-thumbnail {
+                width: 30%;
             }
             
             @include breakpoint(lg) {
