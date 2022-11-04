@@ -1,6 +1,5 @@
 .hexProgram {
     margin-top: 6rem;
-    overflow-x: hidden;
     .container {
         width: fit-content;
         margin: 0 auto;
@@ -28,12 +27,6 @@
         @include breakpoint(lg) {
             flex-direction: column;
         }
-        @include breakpoint(sm) {
-            margin-left: -5%;
-        }
-        @include breakpoint(ms) {
-            margin-left: -10%;
-        }
 
         &_hex {
             background-size: contain;
@@ -47,7 +40,7 @@
             @include breakpoint(lg) {
                 flex-direction: column;
                 width: 440px;
-                padding-top: 15%;
+                padding: 15% 13% 13% 13%;
                 .size-thumbnail {
                     width: 30%;
                 }
@@ -90,15 +83,25 @@
             &:nth-child(3) &--sideimage {
                 right: -35%;
                 bottom: -30%;
-                @include breakpoint(lg) {
-                    display: none;
-                }
             }
             &:nth-child(4) &--sideimage {
                 right: -20%;
                 top: -10%;
             }
 
+            @include breakpoint(lg) {
+                
+                &:nth-child(1) &--sideimage {
+                    left: -23%;
+                    bottom: -31%;
+                }
+                &:nth-child(2) &--sideimage {
+                    top: auto;
+                }
+                &:nth-child(3) &--sideimage {
+                    display: none;
+                }
+            }
             &:nth-child(2) { 
                 margin-top: -25%;
                 left: -5%;
@@ -117,7 +120,7 @@
             
             @include breakpoint(lg) {
                 &:nth-child(n) {
-
+                    position: static;
                     margin-top: 0;
                     top: 0;
                     bottom: 0;
@@ -125,6 +128,32 @@
                     right: 0;
                 }
             }
+
         }
+    }
+    
+    @include breakpoint(ms) {
+        background-color: white;
+        box-shadow: 10px 0 white;
+        width: 100%;
+        min-width: 100%;
+        &__tiles {
+            &_hex {
+                padding: 3rem 0;
+                min-width: 100%;
+                width: 100%;
+                &--bg {
+                    display: none;
+                }
+                &--sideimage {
+                    margin: 0;
+                    position: static;
+                }
+                .size-thumbnail {
+                    filter: contrast(0);
+                }
+            }
+        }
+        
     }
 }

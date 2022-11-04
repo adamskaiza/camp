@@ -2,6 +2,7 @@
     <?php $data=get_field('hexprogram'); ?>
 
     <div class="container">
+        <?php /*
         <div class="hexProgram__title">
             <div class="hexProgram__title_title">
                 <?php echo $data['title'] ?>
@@ -10,6 +11,7 @@
                 <?php echo $data['subtitle'] ?>
             </div>
         </div>
+        */ ?>
 
         <div class="hexProgram__tiles">
             <?php foreach ($data['tiles'] as $key => $value): ?>
