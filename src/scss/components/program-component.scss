@@ -15,12 +15,12 @@
 			}
 		}
 	}
-	ul,
-	ol {
+	& > ul,
+	& > ol {
 		padding-left: 2rem;
 		padding-bottom: 1rem;
 	}
-	ul {
+	& > ul {
 		list-style: disc;
 	}
 	ol {

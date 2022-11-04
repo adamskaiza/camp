@@ -11,7 +11,26 @@ $cartCount = 1;
             <label class="acc__cart-label"
                 for="<?php echo $id;?>-<?php echo $cartCount;?>"><?php echo $acc_cart['acc_title'];?></label>
             <article class="acc__cart-content">
-                <?php echo $acc_cart['acc_content'];?> </article>
+
+                <?php if($acc_cart['level']) :?>
+                <p>Level:
+                    <span><?php echo $acc_cart['level'];?></span>
+                </p>
+                <?php endif;?>
+
+                <?php echo $acc_cart['acc_content'];?>
+
+                <?php if($acc_cart['acc_speaker']) :?>
+                <p>Prowadzący:</p>
+                <ul class="acc__speaker">
+                    <?php foreach($acc_cart['acc_speaker'] as $post) :?>
+                    <?php setup_postdata( $post );?>
+                    <?php get_template_part('parts/crew-item');?> <?php wp_reset_postdata();?>
+                    <?php endforeach;?>
+                </ul>
+                <?php endif;?>
+
+            </article>
         </section>
         <?php $cartCount++;?>
         <?php endforeach;?>

@@ -17,10 +17,15 @@
 		h1 {
 			color: #2973a5;
 			font-weight: 700;
+			text-transform: uppercase;
 		}
 	}
 
 	&__content {
 		padding: 3rem 0;
+	}
+
+	.crew {
+		text-align: center;
 	}
 }
