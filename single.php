@@ -25,7 +25,7 @@ get_header();
     <?php get_template_part('parts/crew-list', null, [
     'post_type' => get_post_type(),
 	'taxonomy' => array( 'role-models', 'trenerzy', 'mentorzy' ),
-    'heading' => 'Inni Prelegenci'
+    'heading' => 'Inni'
 ]);?>
 
 </main><!-- #main -->

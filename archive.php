@@ -44,19 +44,19 @@ get_header();
 
     <?php if(is_archive() && !is_tax()):?>
     <?php get_template_part('parts/crew-list', null, [
-    'post_type' => 'prelegenci',
+    'post_type' => 'speakers',
     'taxonomy' => 'role-models',
     'heading' => 'role models'
 
 ]);?>
     <?php get_template_part('parts/crew-list', null, [
-    'post_type' => 'prelegenci',
+    'post_type' => 'speakers',
     'taxonomy' => 'mentorzy',
     'heading' => 'mentorzy'
 
 ]);?>
     <?php get_template_part('parts/crew-list', null, [
-    'post_type' => 'prelegenci',
+    'post_type' => 'speakers',
     'taxonomy' => 'trenerzy',
     'heading' => 'trenerzy'
 
@@ -66,7 +66,7 @@ get_header();
     <?php if(is_tax('role', 'role-models')) : ?>
     <section class="archive-page__content">
         <?php get_template_part('parts/crew-list', null, [
-    'post_type' => 'prelegenci',
+    'post_type' => 'speakers',
     'taxonomy' => 'role-models',
 
 ]);?>
@@ -74,7 +74,7 @@ get_header();
 
         <?php if(is_tax('role', 'mentorzy')) : ?>
         <?php get_template_part('parts/crew-list', null, [
-    'post_type' => 'prelegenci',
+    'post_type' => 'speakers',
     'taxonomy' => 'mentorzy',
 
 ]);?>
@@ -82,7 +82,7 @@ get_header();
 
         <?php if(is_tax('role', 'trenerzy')) : ?>
         <?php get_template_part('parts/crew-list', null, [
-    'post_type' => 'prelegenci',
+    'post_type' => 'speakers',
     'taxonomy' => 'trenerzy',
 
 ]);?>

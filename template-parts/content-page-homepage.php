@@ -34,19 +34,19 @@
 <?php $role_models = get_the_terms($wyprawa->ID, 'rodzaje_wyprawy'); ?>
 
 <?php get_template_part('parts/crew-list', null, [
-    'post_type' => 'prelegenci',
+    'post_type' => 'speakers',
     'taxonomy' => 'role-models',
     'heading' => 'role models',
     'numberposts' => 8
 ]);?>
 <?php get_template_part('parts/crew-list', null, [
-    'post_type' => 'prelegenci',
+    'post_type' => 'speakers',
     'taxonomy' => 'mentorzy',
     'heading' => 'mentorzy',
     'numberposts' => 8
 ]);?>
 <?php get_template_part('parts/crew-list', null, [
-    'post_type' => 'prelegenci',
+    'post_type' => 'speakers',
     'taxonomy' => 'trenerzy',
     'heading' => 'trenerzy',
     'numberposts' => 8
