@@ -51,14 +51,14 @@ get_header();
 ]);?>
     <?php get_template_part('parts/crew-list', null, [
     'post_type' => 'speakers',
-    'taxonomy' => 'mentorzy',
-    'heading' => 'mentorzy'
+    'taxonomy' => 'mentors',
+    'heading' => 'mentors'
 
 ]);?>
     <?php get_template_part('parts/crew-list', null, [
     'post_type' => 'speakers',
-    'taxonomy' => 'trenerzy',
-    'heading' => 'trenerzy'
+    'taxonomy' => 'trainers',
+    'heading' => 'trainers'
 
 ]);?>
     <?endif;?>
@@ -72,18 +72,18 @@ get_header();
 ]);?>
         <?php endif;?>
 
-        <?php if(is_tax('role', 'mentorzy')) : ?>
+        <?php if(is_tax('role', 'mentors')) : ?>
         <?php get_template_part('parts/crew-list', null, [
     'post_type' => 'speakers',
-    'taxonomy' => 'mentorzy',
+    'taxonomy' => 'mentors',
 
 ]);?>
         <?php endif;?>
 
-        <?php if(is_tax('role', 'trenerzy')) : ?>
+        <?php if(is_tax('role', 'trainers')) : ?>
         <?php get_template_part('parts/crew-list', null, [
     'post_type' => 'speakers',
-    'taxonomy' => 'trenerzy',
+    'taxonomy' => 'trainers',
 
 ]);?>
         <?php endif;?>

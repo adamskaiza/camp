@@ -41,14 +41,14 @@
 ]);?>
 <?php get_template_part('parts/crew-list', null, [
     'post_type' => 'speakers',
-    'taxonomy' => 'mentorzy',
-    'heading' => 'mentorzy',
+    'taxonomy' => 'mentors',
+    'heading' => 'mentors',
     'numberposts' => 8
 ]);?>
 <?php get_template_part('parts/crew-list', null, [
     'post_type' => 'speakers',
-    'taxonomy' => 'trenerzy',
-    'heading' => 'trenerzy',
+    'taxonomy' => 'trainers',
+    'heading' => 'trainers',
     'numberposts' => 8
 ]);?>
 
