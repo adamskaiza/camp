@@ -137,13 +137,14 @@
     }
     
     @include breakpoint(ms) {
-        background-color: white;
-        box-shadow: 10px 0 white;
         width: 100%;
         min-width: 100%;
+        .container {
+            padding: 0;
+        }
         &__tiles {
             &_hex {
-                padding: 3rem 0;
+                padding: 3rem 5%;
                 min-width: 100%;
                 width: 100%;
                 &--bg {
@@ -153,8 +154,17 @@
                     margin: 0;
                     position: static;
                 }
-                .size-thumbnail {
-                    filter: contrast(0);
+                &:nth-child(1) {
+                    background-color: rgb(211,231,78);
+                }
+                &:nth-child(2) {
+                    background-color: rgb(78,231,186);
+                }
+                &:nth-child(3) {
+                    background-color: rgb(253,131,0);
+                }
+                &:nth-child(4) {
+                    background-color: rgb(255,192,78);
                 }
             }
         }
