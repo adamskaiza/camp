@@ -1,4 +1,3 @@
-<?php $i = $args['counter'];?>
 <?php $component_content = $args['component_content'];?>
 <article class="program__component program-component">
     <div class="program-component__what">
@@ -20,7 +19,4 @@
 
         <?php endif;?>
     </div>
-
-
-
 </article>

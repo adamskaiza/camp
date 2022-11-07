@@ -7,10 +7,10 @@ $cartCount = 1;
         <?php if($acc_carts) : ?>
         <?php foreach($acc_carts as $acc_cart):?>
         <section class="acc__cart">
-            <input type="checkbox" id="cart-<?php echo $id;?>-<?php echo $cartCount;?>" name="cb"
+            <input type="checkbox" id="<?php echo $id;?>-<?php echo $cartCount;?>" name="cb"
                 value="<?php echo $acc_cart['acc_title'];?>">
             <label class="acc__cart-label"
-                for="cart-<?php echo $id;?>-<?php echo $cartCount;?>"><?php echo $acc_cart['acc_title'];?></label>
+                for="<?php echo $id;?>-<?php echo $cartCount;?>"><?php echo $acc_cart['acc_title'];?></label>
             <article class="acc__cart-content">
 
                 <?php if($acc_cart['level']) :?>
@@ -24,8 +24,8 @@ $cartCount = 1;
                 <?php if($acc_cart['acc_speaker']) :?>
                 <p>Speaker:</p>
                 <ul class="acc__speaker">
-                    <?php foreach($acc_cart['acc_speaker'] as $tem) :?>
-                    <?php setup_postdata( $tem );?>
+                    <?php foreach($acc_cart['acc_speaker'] as $post) :?>
+                    <?php setup_postdata( $post );?>
                     <?php get_template_part('parts/crew-item');?>
                     <?php wp_reset_postdata();?>
                     <?php endforeach;?>
@@ -35,8 +35,8 @@ $cartCount = 1;
             </article>
         </section>
         <?php $cartCount++;?>
-        <?php endforeach;?>
         <?php $id++;?>
+        <?php endforeach;?>
         <?php endif;?>
 
 
