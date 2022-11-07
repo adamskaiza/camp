@@ -86,8 +86,9 @@
                 top: -10%;
             }
             &:nth-child(3) &--sideimage {
-                right: -35%;
-                bottom: -30%;
+                width: 50%;
+                top: 51%;
+                right: -42%;
             }
             &:nth-child(4) &--sideimage {
                 right: -20%;
@@ -104,7 +105,10 @@
                     top: auto;
                 }
                 &:nth-child(3) &--sideimage {
-                    display: none;
+                    right: auto;
+                    bottom: -30%;
+                    top: auto;
+                    left: -17%;
                 }
             }
             &:nth-child(2) { 
