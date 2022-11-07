@@ -24,8 +24,8 @@ $cartCount = 1;
                 <?php if($acc_cart['acc_speaker']) :?>
                 <p>Speaker:</p>
                 <ul class="acc__speaker">
-                    <?php foreach($acc_cart['acc_speaker'] as $post) :?>
-                    <?php setup_postdata( $post );?>
+                    <?php foreach($acc_cart['acc_speaker'] as $tem) :?>
+                    <?php setup_postdata( $tem );?>
                     <?php get_template_part('parts/crew-item');?>
                     <?php wp_reset_postdata();?>
                     <?php endforeach;?>
