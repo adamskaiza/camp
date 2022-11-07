@@ -19,8 +19,7 @@ get_header();
     <header class="archive-page__header">
         <div class="container">
             <h1 class="post-title">
-                <?php echo is_tax() ? get_queried_object()->name : post_type_archive_title();?>
-            </h1>
+                SPEAKERS </h1>
         </div>
     </header><!-- .page-header -->
 
@@ -68,6 +67,7 @@ get_header();
         <?php get_template_part('parts/crew-list', null, [
     'post_type' => 'speakers',
     'taxonomy' => 'role-models',
+    'heading' => 'role models'
 
 ]);?>
         <?php endif;?>
@@ -76,6 +76,7 @@ get_header();
         <?php get_template_part('parts/crew-list', null, [
     'post_type' => 'speakers',
     'taxonomy' => 'mentors',
+    'heading' => 'mentors'
 
 ]);?>
         <?php endif;?>
@@ -84,6 +85,7 @@ get_header();
         <?php get_template_part('parts/crew-list', null, [
     'post_type' => 'speakers',
     'taxonomy' => 'trainers',
+    'heading' => 'trainers'
 
 ]);?>
         <?php endif;?>

@@ -3,7 +3,7 @@
 <article class="program__component program-component">
     <div class="program-component__what">
         <p class="program-component__timing"><?php echo $args['timing'];?></p>
-        <h4 class="program-component__title"><?php echo $args['title'];?></h4>
+        <div class="program-component__title"><?php echo $args['title'];?></div>
     </div>
     <div class="program-component__desc">
         <?php if($component_content) : ?>

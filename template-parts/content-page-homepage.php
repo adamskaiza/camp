@@ -58,3 +58,5 @@
 <?php get_template_part('parts/partners', null, [
     'partners' => $partners_arr,
 ]);?>
+
+<?php get_template_part('parts/contacts');?>
