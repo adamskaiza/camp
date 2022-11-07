@@ -3,7 +3,25 @@
 	&__gif {
 		margin-bottom: -7px;
 		img {
+			filter: brightness(50%);
 			width: 100%;
+		}
+	}
+	
+	.iframe-container {
+		filter: brightness(50%);
+		position: relative;
+		width: 100%;
+		padding-bottom: 56.25%;
+		height: 0;
+		pointer-events: none;
+
+		iframe {
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
 		}
 	}
 }
