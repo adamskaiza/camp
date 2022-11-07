@@ -23,7 +23,11 @@ get_header();
         </div>
     </header><!-- .page-header -->
 
-    <?php $roles = get_terms( 'role' ); ?>
+    <?php $roles = get_terms([
+        'taxonomy' => 'role',
+        'orderby' => 'description',
+        'order' => 'ASC'
+    ]); ?>
 
     <ul class="roles-list container">
 
