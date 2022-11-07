@@ -25,7 +25,8 @@ $cartCount = 1;
                 <ul class="acc__speaker">
                     <?php foreach($acc_cart['acc_speaker'] as $post) :?>
                     <?php setup_postdata( $post );?>
-                    <?php get_template_part('parts/crew-item');?> <?php wp_reset_postdata();?>
+                    <?php get_template_part('parts/crew-item');?>
+                    <?php wp_reset_postdata();?>
                     <?php endforeach;?>
                 </ul>
                 <?php endif;?>
@@ -33,9 +34,9 @@ $cartCount = 1;
             </article>
         </section>
         <?php $cartCount++;?>
+        <?php $id++;?>
         <?php endforeach;?>
         <?php endif;?>
-        <?php $id++;?>
 
 
     </form>
