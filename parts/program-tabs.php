@@ -38,6 +38,7 @@
                         <?php foreach ($item['components'] as $program_component): ?>
                         <?php $counter = 1;?>
                         <?php get_template_part('parts/program-component', null, [
+                            'item' => $item['title'],
                             'timing' =>  $program_component['timing'],
                             'title' =>  $program_component['component_title'],
                             'component_content' => $program_component['component_content'],

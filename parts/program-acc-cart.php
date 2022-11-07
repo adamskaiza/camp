@@ -1,16 +1,17 @@
 <?php $acc_carts = $args['acc_cart'];
 $cartCount = 1;
+$acc_id = $args['acc_id']
 ?>
-<section id="acc-<?php echo $id;?>" class="acc">
-    <?php var_dump($id);?>
+<section id="acc-<?php echo $acc_id;?>" class="acc">
+    <?php var_dump($acc_id);?>
     <form class="acc__container">
         <?php if($acc_carts) : ?>
         <?php foreach($acc_carts as $acc_cart):?>
         <section class="acc__cart">
-            <input type="checkbox" id="<?php echo $id;?>-<?php echo $cartCount;?>" name="cb"
+            <input type="checkbox" id="<?php echo $acc_id;?>-<?php echo $cartCount;?>" name="cb"
                 value="<?php echo $acc_cart['acc_title'];?>">
             <label class="acc__cart-label"
-                for="<?php echo $id;?>-<?php echo $cartCount;?>"><?php echo $acc_cart['acc_title'];?></label>
+                for="<?php echo $acc_id;?>-<?php echo $cartCount;?>"><?php echo $acc_cart['acc_title'];?></label>
             <article class="acc__cart-content">
 
                 <?php if($acc_cart['level']) :?>
@@ -35,7 +36,6 @@ $cartCount = 1;
             </article>
         </section>
         <?php $cartCount++;?>
-        <?php $id++;?>
         <?php endforeach;?>
         <?php endif;?>
 

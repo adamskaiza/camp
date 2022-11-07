@@ -12,6 +12,7 @@
         <?php elseif($content['acf_fc_layout'] == 'acc' ) :?>
         <?php get_template_part('parts/program-acc-cart', null, [
         'acc_cart' => $content['acc_cart'],
+        'acc_id' => strip_tags($args['title']),
        ])
        ?>
         <?php endif;?>
