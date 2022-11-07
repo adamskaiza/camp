@@ -3,7 +3,6 @@ $cartCount = 1;
 $acc_id = $args['acc_id']
 ?>
 <section id="acc-<?php echo $acc_id;?>" class="acc">
-    <?php var_dump($acc_id);?>
     <form class="acc__container">
         <?php if($acc_carts) : ?>
         <?php foreach($acc_carts as $acc_cart):?>
