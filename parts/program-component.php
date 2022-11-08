@@ -9,6 +9,15 @@
         <?php foreach($component_content as $content) :?>
         <?php if( $content['acf_fc_layout'] == 'simple_section' ): ?>
         <?php echo $content['simple_section_content'];?>
+        <ul class="acc__speaker">
+            <?php if($content['speaker']) :?>
+            <?php foreach($content['speaker'] as $post) :?>
+            <?php setup_postdata( $post );?>
+            <?php get_template_part('parts/crew-item');?>
+            <?php wp_reset_postdata();?>
+            <?php endforeach;?>
+        </ul>
+        <?php endif;?>
         <?php elseif($content['acf_fc_layout'] == 'acc' ) :?>
         <?php get_template_part('parts/program-acc-cart', null, [
         'acc_cart' => $content['acc_cart'],
