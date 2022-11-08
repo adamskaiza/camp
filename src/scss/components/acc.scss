@@ -87,4 +87,16 @@ $text: #000;
 		color: #bd1f2c;
 		font-weight: 600;
 	}
+
+	.crew-item {
+		&__firm {
+			display: none;
+			&--acc {
+				display: block;
+				font-weight: 700;
+				margin-bottom: 0;
+				min-height: 50px;
+			}
+		}
+	}
 }

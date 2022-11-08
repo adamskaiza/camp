@@ -10,6 +10,8 @@
         <article>
             <h3><?php the_title();?></h3>
             <?php the_excerpt();?>
+            <p class="crew-item__firm--acc"><?php echo get_first_paragraph();?></p>
+
         </article>
     </article>
 
