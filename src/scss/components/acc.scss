@@ -33,9 +33,10 @@ $text: #000;
 			background: darken($background, 10%);
 		}
 		&::after {
-			// content: url("/src/img/arrow-down.svg");
+			content: "+";
 			width: 1em;
 			height: 1em;
+			font-size: 1.3rem;
 			text-align: center;
 			transition: all 0.35s;
 		}
@@ -71,7 +72,8 @@ $text: #000;
 			font-weight: bold;
 			text-transform: uppercase;
 			&::after {
-				transform: rotate(180deg);
+				content: "-";
+				// transform: rotate(180deg);
 			}
 		}
 		~ .acc__cart-content {
