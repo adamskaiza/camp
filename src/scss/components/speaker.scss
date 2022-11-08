@@ -20,7 +20,7 @@
 		.crew-item {
 			&__block {
 				@include grid(100px 1fr, null, 2rem);
-				align-items: center;
+				align-items: start;
 			}
 		}
 	}
