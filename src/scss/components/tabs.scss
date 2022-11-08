@@ -1,5 +1,5 @@
 .tabs {
-	padding: 2rem 0;
+	// padding: 2rem 0;
 	@include flex(center, center, column, null);
 }
 .tabs-nav {
@@ -15,7 +15,7 @@
 
 .tabs-content {
 	position: absolute;
-	padding: 1.75em 0;
+	// padding: 1.75em 0;
 	display: none;
 	height: 0;
 

@@ -1,25 +1,39 @@
 .footer {
-	// padding: 3rem 0;
+	padding: 3rem 0;
+	background-color: #c6434c;
+	color: #fff;
+
 	&__logo {
-		padding: 8rem;
-		text-align: center;
+		max-width: 150px;
 	}
 
-	&__nav {
-		position: relative;
-		@include grid(1fr 1fr, null, 1rem);
-		justify-items: center;
-	}
-
-	&__footer-menu {
-		.menu-footer-menu-container {
-			padding: 4rem 0;
+	&__content {
+		@include grid(auto 1fr 1fr, null, 2rem);
+		@include breakpoint(md-s) {
+			grid-template-columns: 1fr;
 		}
-		ul {
-			padding: 2rem 0;
-			font: normal normal normal 16px/17px PT Sans;
-			color: #3b3b3b;
-			@include flex(center, center, row, 1.5rem);
+	}
+
+	&__socials {
+		justify-self: end;
+		@include breakpoint(md-s) {
+			justify-self: start;
+		}
+		a {
+			padding: 0.5rem;
+		}
+	}
+
+	&__contact {
+		@include grid(1rem 1fr, null, 1rem);
+		margin-bottom: 1rem;
+		align-items: baseline;
+
+		&--location {
+			p,
+			h4 {
+				margin-bottom: 5px;
+			}
 		}
 	}
 }

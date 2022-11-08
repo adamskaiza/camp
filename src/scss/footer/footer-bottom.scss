@@ -1,4 +1,5 @@
 .footer-bottom {
+	padding: 1rem 0;
 	&__site-info {
 		@include flex(space-between, center, row, 1rem);
 	}

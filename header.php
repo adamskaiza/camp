@@ -23,6 +23,8 @@
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700;800&display=swap"
             rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;500;600;700&display=swap" rel="stylesheet">
+        <script src="https://kit.fontawesome.com/77bcca71a8.js" crossorigin="anonymous"></script>
         <!-- <link rel="stylesheet" href="node_modules/aos/dist/aos.css" /> -->
         <!-- <script src="node_modules/aos/dist/aos.js"></script> -->
 
