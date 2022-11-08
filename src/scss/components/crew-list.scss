@@ -1,6 +1,9 @@
 .crew-list {
 	@include grid(repeat(4, 1fr), null, 2rem);
 	text-align: center;
+	@include breakpoint(md) {
+		grid-template-columns: 1fr 1fr 1fr;
+	}
 	@include breakpoint(sm) {
 		grid-template-columns: 1fr 1fr;
 	}
