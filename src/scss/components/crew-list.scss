@@ -7,6 +7,15 @@
 }
 
 .crew-item {
+	position: relative;
+	@include flex(space-between, null, column, 0);
+	& > a {
+		position: absolute;
+		top: 0;
+		left: 0;
+		right: 0;
+		bottom: 0;
+	}
 	h3 {
 		text-transform: uppercase;
 		font-weight: 700;
