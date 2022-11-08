@@ -1,5 +1,7 @@
 .footer-bottom {
 	padding: 1rem 0;
+	background-color: #c6434c;
+	color: #fff;
 	&__site-info {
 		@include flex(space-between, center, row, 1rem);
 	}
