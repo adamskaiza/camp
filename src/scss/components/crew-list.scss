@@ -4,20 +4,21 @@
 	@include breakpoint(sm) {
 		grid-template-columns: 1fr 1fr;
 	}
+}
 
-	&__item {
-		h3 {
-			text-transform: uppercase;
-			font-weight: 700;
-		}
-		p {
-			font-weight: 500;
-		}
-		img {
-			width: 100%;
-			border-radius: 50%;
-			aspect-ratio: 1;
-			object-fit: cover;
-		}
+.crew-item {
+	h3 {
+		text-transform: uppercase;
+		font-weight: 700;
+	}
+
+	img {
+		width: 100%;
+		border-radius: 50%;
+		aspect-ratio: 1;
+		object-fit: cover;
+	}
+	&__firm {
+		font-weight: 700;
 	}
 }

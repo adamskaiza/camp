@@ -23,7 +23,9 @@ $crew = get_posts($post_args);
         <ul class="crew__list crew-list">
             <?php foreach($crew as $post) :?>
             <?php setup_postdata($post); ?>
-            <?php get_template_part('parts/crew-item');?>
+            <?php get_template_part('parts/crew-item', null, [
+                'modifier' => 'crew-item--' . $args['taxonomy'],
+            ]);?>
             <?php wp_reset_postdata(); ?>
             <?php endforeach;?>
         </ul>
