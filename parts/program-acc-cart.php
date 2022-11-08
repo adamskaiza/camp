@@ -24,7 +24,7 @@
 
                 <?php if($acc_cart['acc_speaker']) :?>
                 <p>Speaker:</p>
-                <ul class="acc__speaker">
+                <ul class="speaker speaker--acc">
                     <?php foreach($acc_cart['acc_speaker'] as $post) :?>
                     <?php setup_postdata( $post );?>
                     <?php get_template_part('parts/crew-item');?>

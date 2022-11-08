@@ -80,17 +80,6 @@ $text: #000;
 			color: $text;
 		}
 	}
-	&__speaker {
-		list-style: none;
-		padding-bottom: 1rem;
-
-		.crew-item {
-			a {
-				@include grid(150px 1fr, null, 2rem);
-				align-items: center;
-			}
-		}
-	}
 
 	&__level {
 		color: #bd1f2c;

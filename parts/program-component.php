@@ -9,7 +9,7 @@
         <?php foreach($component_content as $content) :?>
         <?php if( $content['acf_fc_layout'] == 'simple_section' ): ?>
         <?php echo $content['simple_section_content'];?>
-        <ul class="acc__speaker">
+        <ul class="speaker speaker--content">
             <?php if($content['speaker']) :?>
             <?php foreach($content['speaker'] as $post) :?>
             <?php setup_postdata( $post );?>
