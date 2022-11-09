@@ -33,6 +33,10 @@ $crew = get_posts($post_args);
         <a href="<?php echo get_site_url() . '/role/' . $args['taxonomy'];?>" class="crew__link">zobacz
             wszystkich</a>
         <?php endif ;?>
+        <?php if(is_tax())  :?>
+        <a href="<?php echo get_site_url() . '/speakers';?>" class="crew__link">zobacz
+            wszystkich</a>
+        <?php endif ;?>
 
     </section>
 </section>
