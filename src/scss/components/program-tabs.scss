@@ -154,7 +154,7 @@ $background--4: #ffc000;
 		text-shadow: 6px 6px 30px rgba(0, 0, 0, 1);
 
 		@include breakpoint(xxl) {
-			left: 58%;
+			left: 60%;
 		}
 		@include breakpoint(sm) {
 			left: 50%;
@@ -183,7 +183,7 @@ $background--4: #ffc000;
 			font-weight: 900;
 
 			@include breakpoint(xxl) {
-				left: 58%;
+				left: 60%;
 			}
 			@include breakpoint(lg) {
 				bottom: 1.6rem;
