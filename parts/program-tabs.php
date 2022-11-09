@@ -24,10 +24,10 @@
             <article class="program-tabs__banner">
                 <img src="<?php echo get_stylesheet_directory_uri() . '/src/img/dzien' . $tab_content_counter . '.jpg';?>"
                     alt="Baner tabu">
-                <h1 class="program-tabs__title">
+                <h1 class="program-tabs__title container">
                     <?php echo $item['title'];?>
                 </h1>
-                <h2>Dzień <?php echo $tab_content_counter;?>.</h2>
+                <h2 class="container">Dzień <?php echo $tab_content_counter;?>.</h2>
             </article>
             <article class="program-tabs__line"
                 style="background-image: url(<?php echo get_stylesheet_directory_uri() . '/src/img/hex_dzien_' . $tab_content_counter . '.png';?>)">

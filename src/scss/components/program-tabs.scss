@@ -153,9 +153,20 @@ $background--4: #ffc000;
 		text-transform: uppercase;
 		text-shadow: 6px 6px 30px rgba(0, 0, 0, 1);
 
+		@include breakpoint(xxl) {
+			left: 58%;
+		}
 		@include breakpoint(sm) {
 			left: 50%;
 			font-size: 2.2rem;
+		}
+		&.container {
+			@include breakpoint(xxl) {
+				padding: 0 3rem;
+			}
+			@include breakpoint(xl) {
+				padding: 0 1rem;
+			}
 		}
 
 		+ h2 {
@@ -171,9 +182,22 @@ $background--4: #ffc000;
 			font-size: 2rem;
 			font-weight: 900;
 
+			@include breakpoint(xxl) {
+				left: 58%;
+			}
 			@include breakpoint(lg) {
-				left: 50%;
 				bottom: 1.6rem;
+			}
+			@include breakpoint(sm) {
+				left: 50%;
+			}
+			&.container {
+				@include breakpoint(xxl) {
+					padding: 0 3rem;
+				}
+				@include breakpoint(xl) {
+					padding: 0 1rem;
+				}
 			}
 		}
 	}
