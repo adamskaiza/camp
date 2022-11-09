@@ -1,5 +1,5 @@
 .hexProgram {
-    margin-top: 15rem;
+    margin-top: 5rem;
     margin-bottom: 5rem;
     padding-top: 6rem;
     @include breakpoint(lg) {
@@ -13,15 +13,11 @@
         font-size: 2rem;
         font-weight: 800;
         color: white;
-        max-width: 40%;
-        margin-bottom: 7rem;
-        &_subtitle {
-            font-size: 4.5rem;
-            line-height: 4rem;
-            @include breakpoint(lg) {
-                font-size: 3rem;
-                line-height: 3rem;
-            }
+        margin-bottom: 10rem;
+        @include breakpoint(lg) {
+            margin-bottom: 1rem;
+            padding: 0 5%;
+            text-align: center;
         }
     }
 
@@ -86,9 +82,8 @@
                 top: -10%;
             }
             &:nth-child(3) &--sideimage {
-                width: 50%;
-                top: 51%;
-                right: -42%;
+                top: 44%;
+                right: -45%;
             }
             &:nth-child(4) &--sideimage {
                 right: -20%;
@@ -106,7 +101,7 @@
                 }
                 &:nth-child(3) &--sideimage {
                     right: auto;
-                    bottom: -30%;
+                    bottom: -34%;
                     top: auto;
                     left: -17%;
                 }
