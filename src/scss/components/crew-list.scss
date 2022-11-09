@@ -1,5 +1,7 @@
 .crew-list {
-	@include grid(repeat(4, 1fr), null, 2rem);
+	@include grid(repeat(4, 1fr), null, null);
+	grid-column-gap: 2rem;
+	grid-row-gap: 6rem;
 	text-align: center;
 	@include breakpoint(md) {
 		grid-template-columns: 1fr 1fr 1fr;
@@ -31,11 +33,30 @@
 		object-fit: cover;
 	}
 	&__firm {
+		@include flex(center, center, null, null);
 		font-weight: 700;
 		margin-bottom: 0;
 		min-height: 50px;
 		&--acc {
 			display: none;
 		}
+	}
+	&--role-models {
+		.crew-item__firm {
+			background-color: #50e6b9;
+		}
+	}
+	&--mentors {
+		.crew-item__firm {
+			background-color: #d4e74f;
+		}
+	}
+	&--trainers {
+		.crew-item__firm {
+			background-color: #ff8201;
+		}
+	}
+	&__firm {
+		font-weight: 900;
 	}
 }
