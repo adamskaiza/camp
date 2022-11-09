@@ -22,6 +22,10 @@
         }
     }
 
+    &__image {
+        max-width: 650px;
+    }
+
     @include breakpoint(lg) {
         flex-direction: column;
         &__left {
