@@ -154,7 +154,8 @@ $background--4: #ffc000;
 		text-shadow: 6px 6px 30px rgba(0, 0, 0, 1);
 
 		@include breakpoint(sm) {
-			font-size: 3rem;
+			left: 50%;
+			font-size: 2.2rem;
 		}
 
 		+ h2 {
@@ -171,6 +172,7 @@ $background--4: #ffc000;
 			font-weight: 900;
 
 			@include breakpoint(lg) {
+				left: 50%;
 				bottom: 1.6rem;
 			}
 		}
