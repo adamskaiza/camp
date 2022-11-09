@@ -1,7 +1,7 @@
 .roles-list {
 	@include flex(flex-start, center, row, 1rem);
-	padding: 3rem 0 0;
-	@include breakpoint(xs) {
+	padding: 3rem 1rem 0;
+	@include breakpoint(sm) {
 		flex-wrap: wrap;
 	}
 	li {
