@@ -27,10 +27,10 @@
                 <i class="fa-solid fa-envelope"></i>
                 <a href="mailto:womenintech@perspektywy.pl">womenintech@perspektywy.pl</a>
             </article>
-            <article class="footer__contact footer__contact--phone">
+            <!-- <article class="footer__contact footer__contact--phone">
                 <i class="fa-solid fa-phone-flip"></i>
                 <a href="tel:+48226285862">+48 22 628 58 62</a>
-            </article>
+            </article> -->
         </section>
         <section class="footer__socials">
             <a href=" https://www.facebook.com/perspektywy.wit/">
