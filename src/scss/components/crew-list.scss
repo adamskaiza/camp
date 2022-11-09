@@ -1,5 +1,7 @@
 .crew-list {
-	@include grid(repeat(4, 1fr), null, 2rem);
+	@include grid(repeat(4, 1fr), null, null);
+	grid-column-gap: 2rem;
+	grid-row-gap: 6rem;
 	text-align: center;
 	@include breakpoint(md) {
 		grid-template-columns: 1fr 1fr 1fr;
