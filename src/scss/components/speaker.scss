@@ -23,5 +23,10 @@
 				align-items: start;
 			}
 		}
+		.post-thumbnail {
+			&::after {
+				display: none;
+			}
+		}
 	}
 }

@@ -1,5 +1,3 @@
-<?php add_filter( 'posts_orderby' , 'posts_orderby_lastname' );?>
-
 <?php
 $post_args = array(
   'numberposts' => $args['numberposts'] ?? null,
