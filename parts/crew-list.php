@@ -1,8 +1,11 @@
+<?php add_filter( 'posts_orderby' , 'posts_orderby_lastname' );?>
+
 <?php
 $post_args = array(
   'numberposts' => $args['numberposts'] ?? null,
   'post_type'   => $args['post_type'],
-  'orderby' => 'rand',
+  'orderby' => 'wpse_last_word',
+  'order' => 'ASC',
 
   'tax_query' => array(
     array(
