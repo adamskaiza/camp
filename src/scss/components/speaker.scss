@@ -10,9 +10,23 @@
 	}
 	&--content {
 		.crew-item {
+			&__block {
+				@include grid(100px 1fr, null, 2rem);
+				align-items: start;
+			}
 			a {
 				@include grid(100px 1fr, null, 2rem);
-				align-items: center;
+				align-items: start;
+			}
+			.crew-item__firm {
+				justify-content: flex-start;
+				align-items: flex-start;
+				margin-left: 132px;
+			}
+			.post-thumbnail {
+				&::after {
+					display: none;
+				}
 			}
 		}
 	}
