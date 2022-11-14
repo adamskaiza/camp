@@ -4,9 +4,9 @@
 $post_args = array(
   'numberposts' => $args['numberposts'] ?? null,
   'post_type'   => $args['post_type'],
-  'orderby' => 'wpse_last_word',
-  'order' => 'ASC',
-
+  'meta_key'          => 'nazwisko',
+  'orderby'           => 'meta_value',
+  'order'             => 'ASC',
   'tax_query' => array(
     array(
         'taxonomy' => 'role',
