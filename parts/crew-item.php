@@ -12,10 +12,11 @@
             <h3> <a href="<?php echo the_permalink();?>">
                     <?php the_title();?></a></h3>
             <?php the_excerpt();?>
-            <p class="crew-item__firm--acc"><?php echo get_first_paragraph();?></p>
+            <p class="crew-item__firm--acc">
+                <?php echo get_first_paragraph();?></p>
 
         </article>
     </article>
 
-    <p class="crew-item__firm"><?php echo get_first_paragraph();?></p>
+    <p class="crew-item__firm" data-firm="<?php echo get_first_paragraph();?>"><?php echo get_first_paragraph();?></p>
 </li>
