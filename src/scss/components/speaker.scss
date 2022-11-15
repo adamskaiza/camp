@@ -11,16 +11,23 @@
 	&--content {
 		@include grid(repeat(4, 1fr), null, 1rem);
 		@include breakpoint(xl) {
-			grid-template-columns: 1fr 1fr;
+			grid-template-columns: repeat(3, 1fr);
 		}
-		@include breakpoint(sm) {
+		@include breakpoint(md) {
+			grid-template-columns: repeat(2, 1fr);
+		}
+		@include breakpoint(xs) {
 			grid-template-columns: 1fr;
 		}
 		.crew-item {
+			justify-content: center;
 			grid-gap: 0;
 			&__block {
-				@include grid(80px 1fr, null, 1.5rem);
-				align-items: start;
+				@include flex(center, center, column, 0);
+
+				& > article {
+					@include flex(center, center, column, 0);
+				}
 			}
 			h3 {
 				margin-bottom: 10px;
@@ -32,16 +39,14 @@
 				line-height: 13px;
 			}
 			a {
-				@include grid(80px 1fr, null, 1.5rem);
-				align-items: start;
+				display: inline-block;
 			}
 
 			&__firm {
-				justify-content: flex-start;
-				align-items: flex-start;
-				margin-left: 104px;
+				justify-content: center;
 			}
 			.post-thumbnail {
+				max-width: 85px;
 				&::after {
 					display: none;
 				}
