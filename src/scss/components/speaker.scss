@@ -9,19 +9,31 @@
 		}
 	}
 	&--content {
+		@include grid(repeat(4, 1fr), null, 3rem);
 		.crew-item {
+			grid-gap: 0;
 			&__block {
-				@include grid(100px 1fr, null, 2rem);
+				@include grid(90px 1fr, null, 1.5rem);
 				align-items: start;
+			}
+			h3 {
+				margin-bottom: 10px;
+				font-size: 14px;
+				line-height: 15px;
+			}
+			p {
+				font-size: 12px;
+				line-height: 13px;
 			}
 			a {
-				@include grid(100px 1fr, null, 2rem);
+				@include grid(90px 1fr, null, 1.5rem);
 				align-items: start;
 			}
-			.crew-item__firm {
+
+			&__firm {
 				justify-content: flex-start;
 				align-items: flex-start;
-				margin-left: 132px;
+				margin-left: 114px;
 			}
 			.post-thumbnail {
 				&::after {
