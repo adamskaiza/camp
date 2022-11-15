@@ -9,11 +9,17 @@
 		}
 	}
 	&--content {
-		@include grid(repeat(4, 1fr), null, 3rem);
+		@include grid(repeat(4, 1fr), null, 1rem);
+		@include breakpoint(xl) {
+			grid-template-columns: 1fr 1fr;
+		}
+		@include breakpoint(sm) {
+			grid-template-columns: 1fr;
+		}
 		.crew-item {
 			grid-gap: 0;
 			&__block {
-				@include grid(90px 1fr, null, 1.5rem);
+				@include grid(80px 1fr, null, 1.5rem);
 				align-items: start;
 			}
 			h3 {
@@ -26,14 +32,14 @@
 				line-height: 13px;
 			}
 			a {
-				@include grid(90px 1fr, null, 1.5rem);
+				@include grid(80px 1fr, null, 1.5rem);
 				align-items: start;
 			}
 
 			&__firm {
 				justify-content: flex-start;
 				align-items: flex-start;
-				margin-left: 114px;
+				margin-left: 104px;
 			}
 			.post-thumbnail {
 				&::after {
