@@ -21,11 +21,23 @@ get_header();
 		endwhile; // End of the loop.
 		?>
 
+    <?php $queried_object = get_queried_object () ;?>
+
 
     <?php get_template_part('parts/crew-list', null, [
-    'post_type' => get_post_type(),
-	'taxonomy' => array( 'role-models', 'trainers', 'mentors' ),
-    'heading' => 'Inni'
+    'post_type' => 'speakers',
+    'taxonomy' => 'role-models',
+    'heading' => 'role models',
+]);?>
+    <?php get_template_part('parts/crew-list', null, [
+    'post_type' => 'speakers',
+    'taxonomy' => 'mentors',
+    'heading' => 'mentors',
+]);?>
+    <?php get_template_part('parts/crew-list', null, [
+    'post_type' => 'speakers',
+    'taxonomy' => 'trainers',
+    'heading' => 'trainers',
 ]);?>
 
 </main><!-- #main -->
