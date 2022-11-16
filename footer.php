@@ -18,7 +18,7 @@
             <article class="footer__contact footer__contact--location">
                 <i class="fa-sharp fa-solid fa-location-dot"></i>
                 <div>
-                    <h4>Fundacja Edykacyjna Perspektywy</h4>
+                    <h4>Fundacja Edukacyjna Perspektywy</h4>
                     <p>ul.Nowogrodzka 31</p>
                     <p>00-511 Warszawa</p>
                 </div>
