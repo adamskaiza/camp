@@ -20,10 +20,10 @@
 			grid-template-columns: 1fr;
 		}
 		.crew-item {
-			justify-content: center;
+			// justify-content: center;
 			grid-gap: 0;
 			&__block {
-				@include flex(null, center, column, 0);
+				@include flex(center, center, column, 0);
 
 				& > article {
 					@include flex(center, center, column, 0);
