@@ -33,6 +33,12 @@
 				margin-bottom: 10px;
 				font-size: 14px;
 				line-height: 15px;
+				@include breakpoint(ms) {
+					font-size: 12px;
+				}
+				@include breakpoint(xs) {
+					font-size: 14px;
+				}
 			}
 			p {
 				font-size: 12px;
