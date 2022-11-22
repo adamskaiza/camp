@@ -16,11 +16,11 @@
 		@include breakpoint(md) {
 			grid-template-columns: repeat(2, 1fr);
 		}
-		@include breakpoint(xs) {
+		@include breakpoint(ms) {
 			grid-template-columns: 1fr;
 		}
 		.crew-item {
-			justify-content: center;
+			// justify-content: center;
 			grid-gap: 0;
 			&__block {
 				@include flex(center, center, column, 0);
@@ -37,6 +37,7 @@
 			p {
 				font-size: 12px;
 				line-height: 13px;
+				text-align: center;
 			}
 			a {
 				display: inline-block;
