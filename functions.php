@@ -215,6 +215,12 @@ function my_acf_op_init()
 	}
 }
 
+add_action('after_setup_theme', 'remove_admin_bar');
+function remove_admin_bar() {
+if (current_user_can('subscriber') && !is_admin()) {
+  show_admin_bar(false);
+}
+}
 
 add_post_type_support( 'page', 'excerpt' );
 
@@ -225,4 +231,17 @@ function get_first_paragraph(){
     $str = substr( $str, 0, strpos( $str, '</p>' ) + 4 );
     $str = strip_tags($str, '<a><strong><em>');
     return $str;
+}
+
+add_action('admin_head', 'my_custom_fonts');
+
+function my_custom_fonts() {
+  echo '<style>
+  #bookacti-template-container .fc-day-thu,
+  #bookacti-template-container .fc-day-fri,
+  #bookacti-template-container .fc-day-sat,
+  #bookacti-template-container .fc-day-sun {
+	display: none;
+  }
+  </style>';
 }
