@@ -217,7 +217,7 @@ function my_acf_op_init()
 
 add_action('after_setup_theme', 'remove_admin_bar');
 function remove_admin_bar() {
-if (current_user_can('subscriber') && !is_admin()) {
+if ((current_user_can('uczestnik') || current_user_can('subscriber')) && !is_admin()) {
   show_admin_bar(false);
 }
 }

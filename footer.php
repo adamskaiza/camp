@@ -13,7 +13,7 @@
 
 <footer class="footer">
     <section class="footer__content container">
-        <img class="footer__logo" src="<?php echo get_stylesheet_directory_uri() . '/src/img/logo-CAMP.png';?>" alt="">
+        <img class="footer__logo" src="<?php echo get_stylesheet_directory_uri() . '/src/img/logo-CAMP.png?original';?>" alt="">
         <section class="footer__contacts">
             <article class="footer__contact footer__contact--location">
                 <i class="fa-sharp fa-solid fa-location-dot"></i>

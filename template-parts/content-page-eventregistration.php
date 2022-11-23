@@ -308,7 +308,7 @@ input.bookacti-submit-form,
      $today->getTimestamp() < $registrationEnd->getTimestamp()) :
 ?>
 
-    <a href="#" id="eventregistration__registerall" class="crew__link" onclick="registerall()">Rezerwuj</a>
+    <a href="#" id="eventregistration__registerall" class="crew__link" onclick="registerall(event)">Rezerwuj</a>
 
 <?php else : ?>
 
@@ -380,7 +380,7 @@ let doOverlap = (dateX1, dateX2, dateY1, dateY2) => {
     return (dateX1 < dateY2 && dateX2 > dateY1);
 }
 
-window.onload = workshopsOnLoad(()=>{
+workshopsOnLoad(()=>{
 
     let workshops = document.querySelectorAll('a.fc-timegrid-event:not(.bookacti-event-booked-by-current-user):not(.bookacti-event-unavailable):not(.bookacti-picked-event)');
 
