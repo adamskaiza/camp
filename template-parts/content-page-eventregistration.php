@@ -9,6 +9,191 @@
 
 ?>
 
+<script>
+const path1 = ['26', '44', '45', '28', '46', '47'];
+const path2 = ['21', '20', '22', '23', '24', '25'];
+
+const firstPart = ['13', '12', '15', '14', '42', '19', '43', '16', '18', '17']
+const secondPart = path1.concat(path2);
+
+let registerall = (e) => {
+    e.preventDefault();
+    if (document.querySelector('.bookacti-single-booking')) {
+        return;
+    }
+
+    let isFirstDayFilled = document.querySelectorAll('.bookacti-calendar.fc')[0].querySelectorAll(
+        '.bookacti-event-booked-by-current-user, .bookacti-picked-event').length == 2;
+
+    let isSecondDayFilled = path2.some(id => document.querySelector(
+            `.bookacti-event-booked-by-current-user[data-activity-id="${id}"], .bookacti-picked-event[data-activity-id="${id}"]`
+            )) ?
+        document.querySelectorAll('.bookacti-calendar.fc')[1].querySelectorAll(
+            '.bookacti-event-booked-by-current-user, .bookacti-picked-event').length == 4 :
+        document.querySelectorAll('.bookacti-calendar.fc')[1].querySelectorAll(
+            '.bookacti-event-booked-by-current-user, .bookacti-picked-event').length == 3;
+
+    let isThirdDayFilled = document.querySelectorAll('.bookacti-calendar.fc')[2].querySelectorAll(
+        '.bookacti-event-booked-by-current-user, .bookacti-picked-event').length == 2;
+
+    if (!isFirstDayFilled) {
+        document.querySelector('.bookacti-booking-form-1').scrollIntoView();
+        alert('Wybierz warsztaty na każdą godzinę w poniedziałek');
+        return;
+    }
+    if (!isSecondDayFilled) {
+        document.querySelector('.bookacti-booking-form-2').scrollIntoView();
+        alert('Wybierz warsztaty na każdą godzinę we wtorek');
+        return;
+    }
+    if (!isThirdDayFilled) {
+        document.querySelector('.bookacti-booking-form-3').scrollIntoView();
+        alert('Wybierz wydarzenia na każdą godzinę w środę');
+        return;
+    }
+    document.querySelectorAll('input.bookacti-submit-form').forEach(button => button.click());
+    setTimeout(() => document.location.reload(true), 200);
+}
+
+let workshopsOnLoad = (fn, i = 0) => {
+    i++;
+    if (document.querySelector('a.fc-timegrid-event')) {
+        fn();
+    } else {
+        if (i < 100) {
+            setTimeout(() => workshopsOnLoad(fn, i), 100);
+        } else {
+            alert("Can't load workshops");
+        }
+    }
+}
+
+let doOverlap = (dateX1, dateX2, dateY1, dateY2) => {
+    dateX1 = new Date(dateX1);
+    dateX2 = new Date(dateX2);
+    dateY1 = new Date(dateY1);
+    dateY2 = new Date(dateY2);
+    return (dateX1 < dateY2 && dateX2 > dateY1);
+}
+
+workshopsOnLoad(() => {
+
+    if (document.querySelector('.bookacti-single-booking')) {
+        document.querySelector('#eventregistration__registerall')?.setAttribute('disabled', '');
+    }
+
+    let workshops = document.querySelectorAll(
+        'a.fc-timegrid-event:not(.bookacti-event-booked-by-current-user):not(.bookacti-event-unavailable):not(.bookacti-picked-event)'
+        );
+
+    let firstTargiKariery = document.querySelector('.fc-timegrid-event[data-event-id="55"]');
+    let secondTargiKariery = document.querySelector('.fc-timegrid-event[data-event-id="56"]');
+
+    workshops.forEach(workshop => {
+
+        let calendar = workshop.parentNode.parentNode;
+
+        workshop.addEventListener('click', (ev) => {
+
+            let pickedInThatDay = Array.from(calendar.querySelectorAll(
+                '.bookacti-event-booked-by-current-user, .bookacti-picked-event'));
+
+            // Jeśli próbuje się odkliknąć Targi Kariery, kiedy w drugiej czesci zarezerwowano warszataty - blokuje i komunikat
+
+            if (workshop == firstTargiKariery &&
+                workshop.classList.contains('bookacti-picked-event') &&
+                pickedInThatDay.some(p => secondPart.includes(p.getAttribute(
+                    'data-activity-id')))) {
+                alert(
+                    'Jeśli w drugiej części dnia wybrałaś warsztaty, w pierwszej musisz iść na Targi Kariery ;)');
+                ev.stopImmediatePropagation();
+                return;
+            }
+
+            if (workshop == secondTargiKariery &&
+                workshop.classList.contains('bookacti-picked-event') &&
+                pickedInThatDay.some(p => firstPart.includes(p.getAttribute(
+                    'data-activity-id')))) {
+                alert(
+                    'Jeśli w pierwszej części dnia wybrałaś warsztaty, w drugiej musisz iść na Targi Kariery ;)');
+                ev.stopImmediatePropagation();
+                return;
+            }
+
+            // Jeśli chce się odkliknąć już zaznaczony workshop - nic nie rób
+
+            if (workshop.classList.contains('bookacti-picked-event')) return;
+
+
+            // Jeśli kliknięty event koliduje czasowo z już zarezerwowanym lub zaznaczonym eventem - przerwij akcje i wyświetl monit
+
+            areThereOverlappingWorkshops = pickedInThatDay.some(p =>
+                doOverlap(
+                    workshop.getAttribute('data-event-start'),
+                    workshop.getAttribute('data-event-end'),
+                    p.getAttribute('data-event-start'),
+                    p.getAttribute('data-event-end')
+                )
+            );
+
+            if (areThereOverlappingWorkshops) {
+                ev.stopImmediatePropagation();
+                alert(
+                    'Nie tak łapczywie! Nie możesz zarejestrować się na to wydarzeniem ponieważ pokrywa się z innymi, które już zarezerwowałaś 🙂');
+                return;
+            }
+
+            // Jeśli zaznaczono TARGI KARIERY drugi raz - przerwij akcje i wyświetl monit
+
+            isTargiKarieryPickedSecondTime = ((workshop == firstTargiKariery) && pickedInThatDay
+                    .includes(secondTargiKariery)) ||
+                ((workshop == secondTargiKariery) && pickedInThatDay.includes(
+                    firstTargiKariery));
+
+            if (isTargiKarieryPickedSecondTime) {
+                ev.stopImmediatePropagation();
+                alert('Targi Kariery możesz wybrać tylko raz');
+                return;
+            }
+
+            // Jeśli wybrany już jest workshop z innej ścieżki - przerwij akcje i wyświetl monit
+
+            isDifferentPathPicked =
+                (pickedInThatDay.some(p => path1.some(id => id == p.getAttribute(
+                        'data-activity-id'))) &&
+                    path2.some(id => id == workshop.getAttribute('data-activity-id'))) ||
+                (pickedInThatDay.some(p => path2.some(id => id == p.getAttribute(
+                        'data-activity-id'))) &&
+                    path1.some(id => id == workshop.getAttribute('data-activity-id')));
+
+            if (isDifferentPathPicked) {
+                ev.stopImmediatePropagation();
+                alert('Warsztaty z innej ścieżki są już wybrane');
+                return;
+            }
+
+            // Jeśli wybrano warsztaty w jednej czesci dnia - automatycznie wybiera Targi w drugiej
+
+            const clickedOnFirstPart = firstPart.some(id => id == workshop.getAttribute(
+                'data-activity-id'));
+            const clickedOnSecondPart = secondPart.some(id => id == workshop.getAttribute(
+                'data-activity-id'));
+
+            if (clickedOnFirstPart && !secondTargiKariery.classList.contains(
+                    'bookacti-picked-event')) {
+                secondTargiKariery.click();
+            } else if (clickedOnSecondPart && !firstTargiKariery.classList.contains(
+                    'bookacti-picked-event')) {
+                firstTargiKariery.click();
+            }
+
+        }); // clicked workshop
+
+    }); // workshop
+
+
+}); // onLoad
+</script>
 <style>
 .h2 {
     margin: 6rem 0 5rem 0;
@@ -36,8 +221,31 @@ input.bookacti-submit-form,
     display: none !important;
 }
 
+.bookacti-event-booked-by-current-user {
+    opacity: .7 !important;
+}
+
+.bookacti-event-booked-by-current-user::before {
+    content: '\2611';
+    color: black;
+    position: absolute;
+    font-weight: bold;
+    font-size: 1.5rem;
+    right: 0;
+    z-index: 10;
+    top: -10px;
+}
+
+.bookacti-event-booked-by-current-user:hover::after {
+    content: 'Twoja rezerwacja';
+    background-color: black;
+    color: white;
+    position: absolute;
+}
+
 .crew__link {
     margin-bottom: 5rem;
+    padding: 1rem 7rem;
 }
 
 .crew__link[disabled] {
@@ -54,13 +262,35 @@ input.bookacti-submit-form,
     justify-content: space-between;
 }
 
+.eventregistration .entry-title {
+    line-height: 2.5rem;
+}
+
 .eventregistration__loginlabel {
     margin-bottom: 4rem;
+}
+
+.eventregistration__accountdata {
+    text-align: right;
+    margin-bottom: 1rem;
+}
+
+.eventregistration__accountdata a {
+    color: blue;
+    text-decoration: underline;
 }
 
 .eventregistration__instruction {
     border: 5px #bd1f2c solid;
     padding: 1rem;
+}
+
+.eventregistration__timer_title {
+    margin-bottom: 0;
+}
+
+.eventregistration__timer_subtitle {
+    margin-top: 0;
 }
 
 .eventregistration .d1 {
@@ -115,6 +345,12 @@ input.bookacti-submit-form,
                 
             else :
         ?>
+        <div class="eventregistration__accountdata">
+            Witaj, <?php echo wp_get_current_user()->data->user_login; ?>! Jesteś zalogowana na konto
+            <i><?php echo wp_get_current_user()->data->user_email; ?></i>
+            <br>
+            <a href="<?php echo wp_logout_url(get_permalink()); ?>">Kliknij tu, by się wylogować </a>
+        </div>
         <div class="eventregistration__instruction">
             <p>
                 Mamy przyjemność zaprosić Cię do rejestracji na warsztaty i Targi Kariery. Ilość miejsc na każde
@@ -273,8 +509,9 @@ input.bookacti-submit-form,
                 <td>Wyjazd uczestniczek</td>
             </tr>
         </table>
-
-        <h3 class="h2" id="registration__timer">Do otwarcia rejestracji pozostało</h3>
+        <div class="h2 eventregistration__timer_title">Otwarcie Rejestracji: 25.11.2022 10:00</div>
+        <h3 class="h2 eventregistration__timer_subtitle" id="eventregistration__timer">Do otwarcia rejestracji pozostało
+        </h3>
 
         <script>
         let timezero = new Date("Nov 25, 2022 10:00:00");
@@ -283,7 +520,9 @@ input.bookacti-submit-form,
         function timer() {
             let now = new Date();
             let seconds = Math.abs(now.getTime() - timezero.getTime()) / 1000;
-
+            if (seconds == 0) {
+                alert('Odśwież stronę by móc się zarejestrować');
+            }
             if (seconds <= 0) {
                 timezero = new Date("Nov 27, 2022 23:59:59");
                 text = 'Do zamknięcia rejestracji pozostało - <b>';
@@ -296,19 +535,20 @@ input.bookacti-submit-form,
             let minutesLeft = Math.floor((hoursLeft) - (hours * 3600));
             let minutes = Math.floor(minutesLeft / 60);
             let remainingSeconds = Math.floor(seconds % 60);
-            document.getElementById('registration__timer').innerHTML = text + days + " dni : " + hours + " godzin : " +
-                minutes + " minut : " + remainingSeconds + ' sekund.</b>';
+            document.getElementById('eventregistration__timer').innerHTML = text + days + " dni : " + hours +
+                " godzin : " + minutes + " minut : " + remainingSeconds + ' sekund.</b>';
         }
         let countdownTimer = setInterval('timer()', 1000);
         </script>
 
         <?php 
-    $today = new DateTime();
-    $registrationStart = new DateTime('2022-11-25T10:00:00P');
-    $registrationEnd = new DateTime('2022-11-27T23:59:59P');
+
+    date_default_timezone_set('Europe/Warsaw');
+    $today = date('Y-m-d H:i:s');
+    $registrationStart = date('Y-m-d H:i:s', strtotime('2022-11-25 10:00:00'));
+    $registrationEnd = date('Y-m-d H:i:s', strtotime('2022-11-27 23:59:59'));
         
-    if ($today->getTimestamp() > $registrationStart->getTimestamp() && 
-     $today->getTimestamp() < $registrationEnd->getTimestamp()) :
+    if (($today >= $registrationStart) && ($today <= $registrationEnd)) :
 ?>
 
         <a href="#" id="eventregistration__registerall" class="crew__link" onclick="registerall(event)">Rezerwuj</a>
@@ -325,189 +565,9 @@ input.bookacti-submit-form,
 
         <?php echo do_shortcode('[bookingactivities_list]'); ?>
 
-        <script>
-        const path1 = ['26', '44', '45', '28', '46', '47'];
-        const path2 = ['21', '20', '22', '23', '24', '25'];
-
-        const firstPart = ['13', '12', '15', '14', '42', '19', '43', '16', '18', '17']
-        const secondPart = path1.concat(path2);
-
-        let registerall = (e) => {
-            e.preventDefault();
-
-            let isFirstDayFilled = document.querySelectorAll('.bookacti-calendar.fc')[0].querySelectorAll(
-                '.bookacti-event-booked-by-current-user, .bookacti-picked-event').length == 2;
-
-            let isSecondDayFilled = path2.some(id => document.querySelector(
-                    `.bookacti-event-booked-by-current-user[data-activity-id="${id}"], .bookacti-picked-event[data-activity-id="${id}"]`
-                    )) ?
-                document.querySelectorAll('.bookacti-calendar.fc')[1].querySelectorAll(
-                    '.bookacti-event-booked-by-current-user, .bookacti-picked-event').length == 4 :
-                document.querySelectorAll('.bookacti-calendar.fc')[1].querySelectorAll(
-                    '.bookacti-event-booked-by-current-user, .bookacti-picked-event').length == 3;
-
-            let isThirdDayFilled = document.querySelectorAll('.bookacti-calendar.fc')[2].querySelectorAll(
-                '.bookacti-event-booked-by-current-user, .bookacti-picked-event').length == 2;
-
-            if (!isFirstDayFilled) {
-                document.querySelector('.bookacti-booking-form-1').scrollIntoView();
-                alert('Wybierz warsztaty na każdą godzinę w poniedziałek');
-                return;
-            }
-            if (!isSecondDayFilled) {
-                document.querySelector('.bookacti-booking-form-2').scrollIntoView();
-                alert('Wybierz warsztaty na każdą godzinę we wtorek');
-                return;
-            }
-            if (!isThirdDayFilled) {
-                document.querySelector('.bookacti-booking-form-3').scrollIntoView();
-                alert('Wybierz wydarzenia na każdą godzinę w środę');
-                return;
-            }
-            document.querySelectorAll('input.bookacti-submit-form').forEach(button => button.click());
-            setTimeout(() => document.location.reload(true), 200);
-        }
-
-        let workshopsOnLoad = (fn, i = 0) => {
-            i++;
-            if (document.querySelector('a.fc-timegrid-event')) {
-                fn();
-            } else {
-                if (i < 100) {
-                    setTimeout(() => workshopsOnLoad(fn, i), 100);
-                } else {
-                    alert("Can't load workshops");
-                }
-            }
-        }
-
-        let doOverlap = (dateX1, dateX2, dateY1, dateY2) => {
-            dateX1 = new Date(dateX1);
-            dateX2 = new Date(dateX2);
-            dateY1 = new Date(dateY1);
-            dateY2 = new Date(dateY2);
-            return (dateX1 < dateY2 && dateX2 > dateY1);
-        }
-
-        workshopsOnLoad(() => {
-
-            let workshops = document.querySelectorAll(
-                'a.fc-timegrid-event:not(.bookacti-event-booked-by-current-user):not(.bookacti-event-unavailable):not(.bookacti-picked-event)'
-                );
-
-            let firstTargiKariery = document.querySelector('.fc-timegrid-event[data-event-id="55"]');
-            let secondTargiKariery = document.querySelector('.fc-timegrid-event[data-event-id="56"]');
-
-            workshops.forEach(workshop => {
-
-                let calendar = workshop.parentNode.parentNode;
-
-                workshop.addEventListener('click', (ev) => {
-
-                    let pickedInThatDay = Array.from(calendar.querySelectorAll(
-                        '.bookacti-event-booked-by-current-user, .bookacti-picked-event'
-                        ));
-
-                    // Jeśli próbuje się odkliknąć Targi Kariery, kiedy w drugiej czesci zarezerwowano warszataty - blokuje i komunikat
-
-                    if (workshop == firstTargiKariery &&
-                        workshop.classList.contains('bookacti-picked-event') &&
-                        pickedInThatDay.some(p => secondPart.includes(p.getAttribute(
-                            'data-activity-id')))) {
-                        alert(
-                            'Jeśli w drugiej części dnia wybrałaś warsztaty, w pierwszej musisz iść na Targi Kariery ;)');
-                        ev.stopImmediatePropagation();
-                        return;
-                    }
-
-                    if (workshop == secondTargiKariery &&
-                        workshop.classList.contains('bookacti-picked-event') &&
-                        pickedInThatDay.some(p => firstPart.includes(p.getAttribute(
-                            'data-activity-id')))) {
-                        alert(
-                            'Jeśli w pierwszej części dnia wybrałaś warsztaty, w drugiej musisz iść na Targi Kariery ;)');
-                        ev.stopImmediatePropagation();
-                        return;
-                    }
-
-                    // Jeśli chce się odkliknąć już zaznaczony workshop - nic nie rób
-
-                    if (workshop.classList.contains('bookacti-picked-event')) return;
-
-
-                    // Jeśli kliknięty event koliduje czasowo z już zarezerwowanym lub zaznaczonym eventem - przerwij akcje i wyświetl monit
-
-                    areThereOverlappingWorkshops = pickedInThatDay.some(p =>
-                        doOverlap(
-                            workshop.getAttribute('data-event-start'),
-                            workshop.getAttribute('data-event-end'),
-                            p.getAttribute('data-event-start'),
-                            p.getAttribute('data-event-end')
-                        )
-                    );
-
-                    if (areThereOverlappingWorkshops) {
-                        ev.stopImmediatePropagation();
-                        alert(
-                            'Nie tak łapczywie! Nie możesz zarejestrować się na to wydarzeniem ponieważ pokrywa się z innymi, które już zarezerwowałaś 🙂');
-                        return;
-                    }
-
-                    // Jeśli zaznaczono TARGI KARIERY drugi raz - przerwij akcje i wyświetl monit
-
-                    isTargiKarieryPickedSecondTime = ((workshop == firstTargiKariery) &&
-                            pickedInThatDay.includes(secondTargiKariery)) ||
-                        ((workshop == secondTargiKariery) && pickedInThatDay.includes(
-                            firstTargiKariery));
-
-                    if (isTargiKarieryPickedSecondTime) {
-                        ev.stopImmediatePropagation();
-                        alert('Targi Kariery możesz wybrać tylko raz');
-                        return;
-                    }
-
-                    // Jeśli wybrany już jest workshop z innej ścieżki - przerwij akcje i wyświetl monit
-
-                    isDifferentPathPicked =
-                        (pickedInThatDay.some(p => path1.some(id => id == p.getAttribute(
-                                'data-activity-id'))) &&
-                            path2.some(id => id == workshop.getAttribute('data-activity-id'))
-                            ) ||
-                        (pickedInThatDay.some(p => path2.some(id => id == p.getAttribute(
-                                'data-activity-id'))) &&
-                            path1.some(id => id == workshop.getAttribute('data-activity-id')));
-
-                    if (isDifferentPathPicked) {
-                        ev.stopImmediatePropagation();
-                        alert('Warsztaty z innej ścieżki są już wybrane');
-                        return;
-                    }
-
-                    // Jeśli wybrano warsztaty w jednej czesci dnia - automatycznie wybiera Targi w drugiej
-
-                    const clickedOnFirstPart = firstPart.some(id => id == workshop.getAttribute(
-                        'data-activity-id'));
-                    const clickedOnSecondPart = secondPart.some(id => id == workshop
-                        .getAttribute('data-activity-id'));
-
-                    if (clickedOnFirstPart && !secondTargiKariery.classList.contains(
-                            'bookacti-picked-event')) {
-                        secondTargiKariery.click();
-                    } else if (clickedOnSecondPart && !firstTargiKariery.classList.contains(
-                            'bookacti-picked-event')) {
-                        firstTargiKariery.click();
-                    }
-
-                }); // clicked workshop
-
-            }); // workshop
-
-
-        }); // onLoad
-        </script>
         <?php
-            endif;
-        ?>
+    endif;
+?>
 
     </div><!-- .entry-content -->
 </section>
