@@ -9,10 +9,10 @@
 
 ?>
 <header class="agenda-header container">
-	<?php the_content();?>
+    <?php the_content();?>
 </header>
 <?php 
-$program = get_field('program');?>
-<?php get_template_part('parts/program-tabs', null, [
-    'custom_field' => $program,
+$agenda = get_field('agenda');?>
+<?php get_template_part('parts/static-agenda-tabs', null, [
+    'custom_field' => $agenda,
 ]);?>

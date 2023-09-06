@@ -16,13 +16,19 @@
             <?php get_template_part('parts/crew-item');?>
             <?php wp_reset_postdata();?>
             <?php endforeach;?>
+            <?php endif;?>
         </ul>
-        <?php endif;?>
+
+        <?php elseif($content['acf_fc_layout'] == 'workshops_section' ) :?>
+        <?php get_template_part('parts/custom-post-acc', null, [
+                        'acc_cart' => $content['workshops'],
+                    ]);?>
+
         <?php elseif($content['acf_fc_layout'] == 'acc' ) :?>
         <?php get_template_part('parts/program-acc-cart', null, [
-        'acc_cart' => $content['acc_cart'],
-        ]);
-       ?>
+                        'acc_cart' => $content['acc_cart'],
+                    ]);?>
+
         <?php endif;?>
         <?php endforeach;?>
 

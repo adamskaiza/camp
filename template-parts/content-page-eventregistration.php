@@ -18,12 +18,12 @@ const secondPart = path1.concat(path2);
 
 let registerall = (e) => {
     e.preventDefault();
-    if (document.querySelector('.bookacti-single-booking')) {
-        return;
-    }
+    // if (document.querySelector('.bookacti-single-booking')) {
+    //     return;
+    // }
 
     let isFirstDayFilled = document.querySelectorAll('.bookacti-calendar.fc')[0].querySelectorAll(
-        '.bookacti-event-booked-by-current-user, .bookacti-picked-event').length == 2;
+        '.bookacti-event-booked-by-current-user, .bookacti-picked-event').length >= 1;
 
     let isSecondDayFilled = path2.some(id => document.querySelector(
             `.bookacti-event-booked-by-current-user[data-activity-id="${id}"], .bookacti-picked-event[data-activity-id="${id}"]`
@@ -78,9 +78,9 @@ let doOverlap = (dateX1, dateX2, dateY1, dateY2) => {
 
 workshopsOnLoad(() => {
 
-    if (document.querySelector('.bookacti-single-booking')) {
-        document.querySelector('#eventregistration__registerall')?.setAttribute('disabled', '');
-    }
+    // if (document.querySelector('.bookacti-single-booking')) {
+    //     document.querySelector('#eventregistration__registerall')?.setAttribute('disabled', '');
+    // }
 
     let workshops = document.querySelectorAll(
         'a.fc-timegrid-event:not(.bookacti-event-booked-by-current-user):not(.bookacti-event-unavailable):not(.bookacti-picked-event)'
@@ -509,36 +509,36 @@ input.bookacti-submit-form,
                 <td>Wyjazd uczestniczek</td>
             </tr>
         </table>
-        <div class="h2 eventregistration__timer_title">Otwarcie Rejestracji: 25.11.2022 10:00</div>
+<!--         <div class="h2 eventregistration__timer_title">Otwarcie Rejestracji: 25.11.2022 10:00</div>
         <h3 class="h2 eventregistration__timer_subtitle" id="eventregistration__timer">Do otwarcia rejestracji pozostało
-        </h3>
+        </h3> -->
 
         <script>
-        let timezero = new Date("Nov 25, 2022 10:00:00");
-        let text = 'Do otwarcia rejestracji pozostało - <b>';
+//         let timezero = new Date("Nov 25, 2022 10:00:00");
+//         let text = 'Do otwarcia rejestracji pozostało - <b>';
 
-        function timer() {
-            let now = new Date();
-            let seconds = Math.abs(now.getTime() - timezero.getTime()) / 1000;
-            if (seconds == 0) {
-                alert('Odśwież stronę by móc się zarejestrować');
-            }
-            if (seconds <= 0) {
-                timezero = new Date("Nov 27, 2022 23:59:59");
-                text = 'Do zamknięcia rejestracji pozostało - <b>';
-                seconds = Math.abs(now.getTime() - timezero.getTime()) / 1000
-            }
+//         function timer() {
+//             let now = new Date();
+//             let seconds = Math.abs(now.getTime() - timezero.getTime()) / 1000;
+//             if (seconds == 0) {
+//                 alert('Odśwież stronę by móc się zarejestrować');
+//             }
+//             if (seconds <= 0) {
+//                 timezero = new Date("Nov 27, 2022 23:59:59");
+//                 text = 'Do zamknięcia rejestracji pozostało - <b>';
+//                 seconds = Math.abs(now.getTime() - timezero.getTime()) / 1000
+//             }
 
-            let days = Math.floor(seconds / 24 / 60 / 60);
-            let hoursLeft = Math.floor((seconds) - (days * 86400));
-            let hours = Math.floor(hoursLeft / 3600);
-            let minutesLeft = Math.floor((hoursLeft) - (hours * 3600));
-            let minutes = Math.floor(minutesLeft / 60);
-            let remainingSeconds = Math.floor(seconds % 60);
-            document.getElementById('eventregistration__timer').innerHTML = text + days + " dni : " + hours +
-                " godzin : " + minutes + " minut : " + remainingSeconds + ' sekund.</b>';
-        }
-        let countdownTimer = setInterval('timer()', 1000);
+//             let days = Math.floor(seconds / 24 / 60 / 60);
+//             let hoursLeft = Math.floor((seconds) - (days * 86400));
+//             let hours = Math.floor(hoursLeft / 3600);
+//             let minutesLeft = Math.floor((hoursLeft) - (hours * 3600));
+//             let minutes = Math.floor(minutesLeft / 60);
+//             let remainingSeconds = Math.floor(seconds % 60);
+//             document.getElementById('eventregistration__timer').innerHTML = text + days + " dni : " + hours +
+//                 " godzin : " + minutes + " minut : " + remainingSeconds + ' sekund.</b>';
+//         }
+//         let countdownTimer = setInterval('timer()', 1000);
         </script>
 
         <?php 

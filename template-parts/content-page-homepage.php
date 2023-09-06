@@ -31,7 +31,7 @@
 
 <?php // get_template_part('parts/feedback-slider');?>
 
-<?php $role_models = get_the_terms($wyprawa->ID, 'rodzaje_wyprawy'); ?>
+<?php //$role_models = get_the_terms($wyprawa->ID, 'rodzaje_wyprawy'); ?>
 
 <?php get_template_part('parts/crew-list', null, [
     'post_type' => 'speakers',
