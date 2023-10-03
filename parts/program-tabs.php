@@ -1,4 +1,5 @@
 <?php $program = $args['custom_field'];?>
+<?php if($program) : ?>
 <section class="tabs program-tabs">
     <header class="program-tabs__header container">
         <h1 class="h2">PROGRAM</h1>
@@ -58,3 +59,4 @@
 
     </div>
 </section>
+<?php endif;?>

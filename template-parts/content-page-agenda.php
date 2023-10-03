@@ -8,11 +8,10 @@
  */
 
 ?>
-<header class="agenda-header container">
+<section class="agenda-header container">
     <?php the_content();?>
-</header>
-<?php 
-$agenda = get_field('agenda');?>
+</section>
+<?php $agenda = get_field('agenda');?>
 <?php get_template_part('parts/static-agenda-tabs', null, [
     'custom_field' => $agenda,
 ]);?>

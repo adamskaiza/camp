@@ -1,7 +1,4 @@
 <?php $agenda = $args['custom_field'];?>
-<pre>
-    <?php //var_dump($agenda);?>
-</pre>
 
 <section class="tabs program-tabs">
     <header class="program-tabs__header container">
@@ -103,7 +100,7 @@
                 style="background-image: url(<?php echo get_stylesheet_directory_uri() . '/src/img/hex_dzien_3.png';?>)">
                 <div class="program-tabs__line-wrapper container">
                     <section class="program__program program">
-                        <?php if($agenda['program_one']['components']): ?>
+                        <?php if($agenda['program_three']['components']): ?>
                         <?php foreach ($agenda['program_three']['components'] as $program_component): ?>
                         <?php $counter = 1;?>
                         <?php get_template_part('parts/program-component', null, [
